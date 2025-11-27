@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@layer base {
+  body {
+    @apply text-white relative   font-poppins bg-[#EFEFEF];
+  }
+
+  img {
+    @apply w-full h-full;
+  }
+}
+
+.title {
+  @apply font-inter
+         text-[80px] font-extrabold leading-[100%]
+         tracking-[var(--h1-letterspacing,-3.2px)] max-lg:text-6xl max-md:text-[32px] max-md:tracking-[var(--h1-letterspacing,-1.2px)];
+}
+
+.sectitle {
+  @apply italic font-semibold;
+}
+
+.description {
+  @apply font-poppins !leading-[124%]
+         text-lg font-normal 
+         tracking-[var(--h1-letterspacing,-0.36px)] max-lg:text-base max-md:text-[12px];
+}
+
+.base-x-p {
+  @apply px-[300px] max-2xl:px-[200px] max-xl:px-[100px] max-lg:px-20 max-md:px-10 max-sm:px-5;
+}
