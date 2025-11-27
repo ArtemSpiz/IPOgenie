@@ -36,7 +36,7 @@ const styleObject = computed(() => ({
 
 <template>
   <button
-    class="flex items-center w-[210px] border rounded-2xl text-base justify-between pl-[18px] pr-[11px] py-[10px] font-medium max-md:py-[5px] max-md:rounded-lg max-md:pl-3 max-md:text-[10px] max-md:pr-1 max-md:w-[125px]"
+    class="flex items-center z-10 w-[210px] border rounded-2xl text-base justify-between pl-[18px] pr-[11px] py-[10px] font-medium max-md:py-[5px] max-md:rounded-lg max-md:pl-3 max-md:text-[10px] max-md:pr-1 max-md:w-[125px]"
     :style="styleObject"
   >
     {{ text }}

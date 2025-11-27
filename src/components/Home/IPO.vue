@@ -1,131 +1,227 @@
 <script setup>
-import IPOcardImg1 from "@/assets/img/Home/IPOcardImg1.png";
-import IPOcardImg2 from "@/assets/img/Home/IPOcardImg2.png";
-import IPOcardImg3 from "@/assets/img/Home/IPOcardImg3.png";
-import IPOcardImg4 from "@/assets/img/Home/IPOcardImg4.png";
-import IPOcardImg5 from "@/assets/img/Home/IPOcardImg5.png";
-import Coin from "@/assets/img/Home/IPOcoin.png";
-
-import IPOblur1 from "@/assets/img/Home/IPOblur1.png";
-import IPOblur2 from "@/assets/img/Home/IPOblur2.png";
-import IPOblur3 from "@/assets/img/Home/IPOblur3.png";
-import IPOblur4 from "@/assets/img/Home/IPOblur4.png";
-import IPOblur5 from "@/assets/img/Home/IPOblur5.png";
+import Arrow from "@/assets/icons/Arrow.vue";
+import Uber from "@/assets/icons/Uber.vue";
+import IPOicon1 from "@/assets/img/Home/IPOicon1.png";
+import IPOicon2 from "@/assets/img/Home/IPOicon2.png";
+import IPOicon3 from "@/assets/img/Home/IPOicon3.png";
+import IPOiconCenter1 from "@/assets/img/Home/IPOiconCenter1.png";
+import IPOiconCenter2 from "@/assets/img/Home/IPOiconCenter2.png";
+import IPOiconCenter3 from "@/assets/img/Home/IPOiconCenter3.png";
+import CustomButton from "@/ui/CustomButton.vue";
 
 const IPOcards = [
   {
-    title: "Lower Fees",
+    icon: IPOicon1,
+    title: "The $250K Ticket",
     subtitle:
-      "Enjoy reduced fees across all on-chain actions and platform features.",
-    line: IPOcardImg1,
-    blur: IPOblur1,
+      "Minimum buy-ins for VC funds exclude 99% of the world. You need a quarter million just to get a meeting",
   },
   {
-    title: "Staking Rewards",
-    subtitle: "Earn passive income by staking $IPO for long-term growth.",
-    line: IPOcardImg2,
-    blur: IPOblur2,
-  },
-  {
-    title: "Early Deal Access",
+    icon: IPOicon2,
+    title: "The 10-Year Trap",
     subtitle:
-      "Get priority entry into private-market opportunities and upcoming presale rounds.",
-    line: IPOcardImg3,
-    blur: IPOblur3,
+      "Your money is frozen for a decade. Even if the company booms, you can't sell while insider cash out on secondary market.",
   },
   {
-    title: "Tier Unlocks",
+    icon: IPOicon3,
+    title: "The Accredited Wall",
     subtitle:
-      "Holding more $IPO unlocks higher rewards, better allocations, and VIP presale access.",
-    line: IPOcardImg4,
-    blur: IPOblur4,
+      "Unless you earn $200k/year or have $1M+ net worth, you're not even allowed to look. The law literally prevents you from participating",
   },
   {
-    title: "Governance Rights",
-    subtitle: "Vote on ecosystem upgrades and future development decisions.",
-    line: IPOcardImg5,
-    blur: IPOblur5,
+    text: "Every year , $3 trillion in startup value is created behind closed doors. The rich get richer. You get the scraps at IPO .",
+    link: "Until now",
+  },
+];
+
+const IPOlinesCenter = [
+  {
+    icon: IPOiconCenter1,
+    name: "Uber",
+    number1: "$5B",
+    number2: "$70B",
+    x: "(14x)",
+  },
+  {
+    icon: IPOiconCenter2,
+    name: "Airbnb",
+    number1: "$18B",
+    number2: "$100B",
+    x: "(5.5x)",
+  },
+  {
+    icon: IPOiconCenter3,
+    name: "Coinbase",
+    number1: "$8B",
+    number2: "$86B",
+    x: "(10x)",
   },
 ];
 </script>
 
 <template>
   <div
-    class="mt-[94px] flex flex-col gap-14 max-w-[1600px] base-x-p mx-auto max-xl:gap-10 max-lg:gap-5 max-md:gap-3"
+    class="mt-[94px] flex flex-col gap-11 items-center justify-center max-w-[2000px] base-x-p mx-auto"
   >
-    <div class="flex flex-col gap-[18px] items-center max-md:gap-4">
-      <div class="title text-center text-black">
-        $IPO Token <span class="sectitle">Utility</span>
-      </div>
-      <div class="description text-center text-black max-w-[570px] max-lg:max-w-[400px]">
-        The $IPO token powers the entire IPO Genie ecosystem and gives early
-        buyers strong crypto presale benefits.
-      </div>
-    </div>
+    <div class="flex flex-col gap-10 w-full">
+      <div class="flex flex-col gap-7 items-center">
+        <div class="flex flex-col text-center gap-[17px]">
+          <div
+            class="flex flex-wrap justify-center title text-black items-center gap-4"
+          >
+            <span class="whitespace-nowrap">You Missed</span>
+            <span
+              class="bg-black text-white px-8 rounded-2xl flex items-center h-[70px] md:h-[90px] lg:h-[104px]"
+            >
+              <Uber />
+            </span>
+            <span class="whitespace-nowrap">at $5 Billion</span>
+          </div>
 
-    <div
-      class="flex items-start relative justify-center h-[600px] max-lg:gap-4 max-lg:h-max max-lg:flex-col max-lg:items-center"
-    >
-      <div class="h-[350px] w-auto aspect-square max-md:h-[248px]">
-        <img :src="Coin" />
-      </div>
+          <div class="title !text-[100px] text-[#FF5B00]">
+            By the $IPO, It was $70 Billion
+          </div>
+        </div>
 
-      <div class="max-lg:flex max-lg:flex-wrap justify-center gap-[10px]">
         <div
-          v-for="(card, index) in IPOcards"
-          :key="index"
-          :class="[
-            'rounded-[15px] absolute flex flex-col bg-[#FF5B00] px-5 py-8 gap-5 max-lg:static max-lg:bg-white transition-all duration-300 ease-in-out  hover:shadow-[0_4px_20px_2px_rgba(0,0,0,0.25)] max-lg:py-2 max-lg:gap-1 max-lg:items-center max-lg:text-center',
-            {
-              'top-0 left-[-5%]': index === 0,
-              'top-0 right-[-5%]': index === 1,
-              'bottom-[100px] left-[-5%] ': index === 2,
-              'bottom-0 right-1/2 translate-x-1/2 max-lg:translate-x-0':
-                index === 3,
-              'bottom-[150px] right-[-5%]': index === 4,
-            },
-          ]"
+          class="description text-center text-black max-w-[570px] max-lg:max-w-[400px]"
+        >
+          Forged from aerospace-grade steel. Optimized for global commerce.
+          Choose your level of access.
+        </div>
+      </div>
+
+      <div class="flex gap-[7px] flex-col lg:flex-row w-full">
+        <div class="flex flex-col gap-[7px] w-full lg:w-auto">
+          <div
+            v-for="(card, index) in IPOcards.slice(0, 2)"
+            :key="index"
+            class="border-[0.5px] justify-between flex flex-col border-[#FF5B00] bg-white rounded-[30px] min-h-[235px] px-[18px] py-[22px] lg:w-[325px]"
+          >
+            <div v-if="card.icon" class="w-8 h-8">
+              <img :src="card.icon" alt="icon" />
+            </div>
+            <div class="flex flex-col gap-4">
+              <div
+                v-if="card.title"
+                class="text-black font-inter text-2xl font-extrabold leading-[85%]"
+              >
+                {{ card.title }}
+              </div>
+              <div
+                v-if="card.subtitle"
+                class="text-black font-inter text-sm leading-[142%]"
+              >
+                {{ card.subtitle }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-[15px] items-center gap-8 justify-between px-[30px] py-10 bg-white flex flex-col rounded-[30px] shadow-[0_4px_20px_0_rgba(0,0,0,0.25)] border-[#EDEDED] w-full lg:flex-1"
         >
           <div
-            class="absolute z-0 rounded-full overflow-hidden h-full w-auto max-lg:hidden"
-            :class="[
-              {
-                'bottom-0 right-0': index === 0,
-                'bottom-0 left-0': index === 1,
-                'top-0 right-0 ': index === 2,
-                'top-0 right-1/2 translate-x-1/2': index === 3,
-                'top-0 left-0': index === 4,
-              },
-            ]"
+            class="text-[32px] text-center lg:text-left text-black font-inter font-extrabold leading-[85%]"
           >
-            <img :src="card.blur" />
+            What insider Got vs What You Got
           </div>
 
-          <div
-            class="text-[22px] z-10 font-semibold !leading-[140%] max-lg:text-lg max-md:text-base max-lg:text-black"
-          >
-            {{ card.title }}
+          <div class="flex flex-col self-stretch w-full gap-[6px]">
+            <div
+              v-for="(link, index) in IPOlinesCenter"
+              :key="index"
+              class="w-full flex bg-[#ECECEC] rounded-[20px] items-center justify-between p-5 flex-wrap gap-4"
+            >
+              <div class="flex gap-[11px] items-center flex-wrap">
+                <div class="w-[30px] h-[30px] flex-shrink-0">
+                  <img :src="link.icon" alt="company icon" />
+                </div>
+
+                <div class="flex gap-5 items-center flex-wrap">
+                  <div
+                    class="text-xl font-inter text-black font-extrabold whitespace-nowrap"
+                  >
+                    {{ link.name }}
+                  </div>
+
+                  <div
+                    class="text-xl flex items-center gap-[10px] font-inter text-black font-medium whitespace-nowrap"
+                  >
+                    Pre-IPO <Arrow fill-color="#000" /> IPO
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 flex-wrap">
+                <div
+                  class="text-xl flex items-center gap-[10px] font-inter text-[#00CA5B] font-medium whitespace-nowrap"
+                >
+                  {{ link.number1 }} <Arrow fill-color="#00CA5B" />
+                  {{ link.number2 }}
+                </div>
+                <div
+                  class="text-base font-inter text-[#898989] font-medium whitespace-nowrap"
+                >
+                  {{ link.x }}
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            class="text-xs z-10 max-w-[245px] max-xl:max-w-[150px] tracking-[-0.2px] max-md:text-[10px] max-lg:text-black max-lg:max-w-[250px]"
-          >
-            {{ card.subtitle }}
+
+          <div class="flex px-5 items-center flex-col gap-2 w-full">
+            <div class="w-full h-[1px] bg-black"></div>
+
+            <div
+              class="text-base text-center font-inter text-[#898989] leading-[142%]"
+            >
+              By the time you could buy on IPO day, the biggest gains were
+              already captured by VCs and insiders
+            </div>
           </div>
+        </div>
+
+        <div class="flex flex-col gap-[7px] w-full lg:w-auto">
           <div
-            :class="[
-              'absolute w-auto max-lg:hidden',
-              { 'top-[50px] right-[-42%] max-xl:right-[-65%]': index === 0 },
-              { 'top-[50px] left-[-42%] max-xl:left-[-55%]': index === 1 },
-              { 'bottom-[70px] right-[-42%] max-xl:right-[-55%]': index === 2 },
-              { 'top-[-30%] right-1/2 translate-x-1/2': index === 3 },
-              { 'bottom-[50px] left-[-42%] max-xl:left-[-50%]': index === 4 },
-            ]"
+            v-for="(card, index) in IPOcards.slice(2, 4)"
+            :key="index + 2"
+            class="border-[0.5px] justify-between flex flex-col border-[#FF5B00] bg-white rounded-[30px] min-h-[235px] px-[18px] py-[22px] lg:w-[325px]"
           >
-            <img :src="card.line" class="object-contain max-h-10" />
+            <div v-if="card.icon" class="w-8 h-8">
+              <img :src="card.icon" alt="icon" />
+            </div>
+            <div class="flex flex-col gap-4">
+              <div
+                v-if="card.title"
+                class="text-black font-inter text-2xl font-extrabold leading-[85%]"
+              >
+                {{ card.title }}
+              </div>
+              <div
+                v-if="card.subtitle"
+                class="text-black font-inter text-sm leading-[142%]"
+              >
+                {{ card.subtitle }}
+              </div>
+
+              <div
+                v-if="card.text"
+                class="text-black italic text-[20px] leading-[142%]"
+              >
+                {{ card.text }}
+              </div>
+              <div
+                v-if="card.link"
+                class="text-[#FF5B00] italic font-bold text-[22px] leading-[142%]"
+              >
+                {{ card.link }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <CustomButton text="Buy Before its too late" class="!w-max gap-3" />
   </div>
 </template>
 
