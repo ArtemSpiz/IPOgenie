@@ -5,6 +5,7 @@ import GenieNum1 from "@/assets/img/Home/GenieNum1.png";
 import GenieNum2 from "@/assets/img/Home/GenieNum2.png";
 import GenieNum3 from "@/assets/img/Home/GenieNum3.png";
 import GenieNum4 from "@/assets/img/Home/GenieNum4.png";
+import ArrowsNextPrev from "@/ui/ArrowsNextPrev.vue";
 import { ref } from "vue";
 
 const RoadmapCards = [
@@ -86,7 +87,7 @@ const RoadmapCards = [
 const carousel = ref(null);
 let touchStartX = 0;
 
-const scrollStep = 350 + 18; 
+const scrollStep = 350 + 18;
 
 const scrollNext = () => {
   if (carousel.value) carousel.value.scrollLeft += scrollStep;
@@ -122,20 +123,7 @@ const endSwipe = (e) => {
         </div>
       </div>
 
-      <div class="flex items-center gap-5">
-        <div
-          @click="scrollPrev"
-          class="bg-[#16151A] cursor-pointer rounded-[5px] w-10 h-10 flex justify-center items-center shadow-[0_4px_20px_2px_rgba(0,0,0,0.25)]"
-        >
-          <ArrowNext fill-color="#fff" class="rotate-180" />
-        </div>
-        <div
-          @click="scrollNext"
-          class="bg-[#FFF] cursor-pointer rounded-[5px] w-10 h-10 flex justify-center items-center shadow-[0_4px_20px_2px_rgba(0,0,0,0.25)]"
-        >
-          <ArrowNext />
-        </div>
-      </div>
+      <ArrowsNextPrev :next="scrollNext" :prev="scrollPrev" />
     </div>
 
     <div
