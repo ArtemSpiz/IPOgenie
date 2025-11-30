@@ -37,7 +37,7 @@ const OpinionsVideos = [
       </div>
     </div>
 
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-6 w-full">
       <div class="w-full max-w-[860px] h-auto">
         <img :src="MainVideo" />
       </div>
@@ -47,25 +47,31 @@ const OpinionsVideos = [
           <div class="w-12 aspect-square">
             <img :src="Logo" />
           </div>
-          <div class="flex flex-col gap-2">
-            <div class="text-black text-2xl font-bold leading-[80%]">
+          <div class="flex flex-col gap-2 max-md:gap-0">
+            <div
+              class="text-black text-2xl font-bold leading-[80%] max-md:text-lg"
+            >
               The Crypto Hassi
             </div>
-            <div class="text-[#989898] text-base font-medium leading-[80%]">
+            <div
+              class="text-[#989898] text-base font-medium leading-[80%] max-md:text-xs"
+            >
               1.03M Subscribers
             </div>
           </div>
         </div>
-        <div class="text-[#989898] text-base font-medium leading-[80%]">
+        <div
+          class="text-[#989898] text-base font-medium leading-[80%] max-md:text-xs"
+        >
           2 Weeks ago
         </div>
       </div>
 
-      <div class="flex gap-3">
+      <div class="flex gap-3 max-md:grid max-md:grid-cols-2">
         <div
           v-for="(video, i) in OpinionsVideos"
           :key="i"
-          class="w-[210px] overflow-hidden h-auto rounded-[15px]"
+          class="w-[210px] overflow-hidden h-auto rounded-[15px] max-md:w-full"
         >
           <img :src="video.image" />
         </div>
