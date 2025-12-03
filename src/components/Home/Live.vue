@@ -94,7 +94,7 @@ const LiveCards = [
             <div
               :class="[
                 { 'w-full h-[9px] max-md:h-[6px]': index === 0 },
-                { 'w-auto h-[34px] max-md:h-5': index === 2 },
+                { 'w-auto h-[34px] max-md:h-5 max-md:w-[38px]': index === 2 },
                 { 'w-full h-[5px]': index === 3 },
               ]"
               v-if="card.image"

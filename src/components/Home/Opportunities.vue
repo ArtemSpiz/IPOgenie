@@ -58,7 +58,6 @@ onMounted(async () => {
 
   const spacing = 40;
 
-  // z-index — верхня карта найбільший
   cards.forEach((c, i) => {
     c.style.zIndex = 100 - (cards.length - i);
     gsap.set(c, { position: "relative" });
@@ -66,7 +65,6 @@ onMounted(async () => {
 
   const heights = [...cards].map((c) => c.getBoundingClientRect().height);
 
-  // Фінальна висота = висота першої карти + spacing * (кількість карт - 1)
   const finalHeight = heights[0] + spacing * (cards.length - 1) + 125;
 
   const tl = gsap.timeline({
@@ -89,7 +87,6 @@ onMounted(async () => {
     0
   );
 
-  // === Ефект накривання — ПО ЧЕРЗІ ===
   let accumulatedOffset = 0;
 
   cards.forEach((card, i) => {
@@ -175,7 +172,7 @@ onMounted(async () => {
               <div class="text-black text-2xl font-bold leading-[140%]">
                 {{ card.price }}
               </div>
-              <div class="h-8 max-md:h-7 max-sm:h-6 w-auto">
+              <div class="h-8 w-[138px]">
                 <img :src="card.name" />
               </div>
             </div>

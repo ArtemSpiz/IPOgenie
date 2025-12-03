@@ -1,4 +1,5 @@
 <script setup>
+import { ref, watch } from "vue";
 import Logo from "@/assets/img/Logo.png";
 import LogoBlack from "@/assets/img/LogoBlack.png";
 import Burger from "@/assets/icons/Burger.vue";
@@ -10,6 +11,8 @@ defineProps({
   },
 });
 
+const isOpen = ref(false);
+
 const HeaderLinks = [
   { title: "Platform", link: "/news" },
   { title: "Deals", link: "/wallet" },
@@ -19,12 +22,24 @@ const HeaderLinks = [
   { title: "FAQ", link: "/faq" },
   { title: "Contact", link: "/contact" },
 ];
+
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value;
+};
+
+watch(isOpen, (newVal) => {
+  if (newVal) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+});
 </script>
 
 <template>
   <div
     :class="[
-      'absolute left-0 right-0 top-[28px] z-50 flex justify-center px-4',
+      'absolute left-0 right-0 top-0 pt-7 z-50 flex justify-center px-4',
     ]"
   >
     <div
@@ -33,11 +48,14 @@ const HeaderLinks = [
         colorBg ? 'bg-black/5 backdrop-blur-sm' : 'bg-transparent',
       ]"
     >
-      <router-link to="/" class="h-10 w-[190px] max-xl:h-auto max-xl:w-[115px]">
-        <img :src="colorBg ? LogoBlack : Logo" alt="" />
+      <router-link
+        to="/"
+        class="h-10 z-50 w-[190px] max-xl:h-auto max-xl:w-[115px]"
+      >
+        <img :src="colorBg ? LogoBlack : Logo" alt="Logo" />
       </router-link>
 
-      <div class="flex items-center gap-7 max-xl:gap-5 max-lg:hidden">
+      <div class="flex z-50 items-center gap-7 max-xl:gap-5 max-lg:hidden">
         <router-link
           :to="links.link"
           v-for="(links, index) in HeaderLinks"
@@ -51,19 +69,48 @@ const HeaderLinks = [
         </router-link>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex z-50 items-center gap-4">
         <button
           class="py-[18px] px-[67px] rounded-2xl bg-[#FF5B00] text-base font-medium max-xl:px-[27px] max-lg:py-[9px] max-xl:text-xs max-md:text-[10px] max-lg:min-w-[100px] max-lg:rounded-[8px] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,91,0,0.5)]"
         >
           Join Now
         </button>
 
-        <div class="w-6 h-6 hidden max-lg:flex">
+        <div
+          class="w-6 h-6 flex max-lg:flex lg:hidden cursor-pointer"
+          @click="toggleMenu"
+        >
           <Burger :fill-color="colorBg ? '#000' : '#fff'" />
         </div>
       </div>
     </div>
+
+    <transition name="fade">
+      <div
+        v-if="isOpen"
+        class="absolute h-screen pt-[100px] top-[0px] backdrop-blur-md left-0 right-0 shadow-lg rounded-b-2xl py-5 flex flex-col items-start px-10 gap-4 max-lg:flex z-40"
+      >
+        <router-link
+          v-for="(links, index) in HeaderLinks"
+          :key="index"
+          :to="links.link"
+          class="text-lg font-medium hover:text-[#FF5B00] transition-colors duration-300"
+          @click="isOpen = false"
+        >
+          {{ links.title }}
+        </router-link>
+      </div>
+    </transition>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
