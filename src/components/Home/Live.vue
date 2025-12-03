@@ -35,7 +35,7 @@ const LiveCards = [
 
 <template>
   <div
-    class="mt-[123px] relative base-x-p gap-9 pb-[120px] flex flex-col items-center max-xl:pb-[100px] max-lg:pb-[80px] max-md:pb-[65px]"
+    class="mt-[123px] max-lg:mt-[70px] max-md:mt-16 relative base-x-p gap-9 pb-[120px] flex flex-col items-center max-xl:pb-[100px] max-lg:pb-[80px] max-md:pb-[65px]"
   >
     <div
       class="w-full px-5 z-0 absolute bottom-0 right-0 h-auto object-contain max-md:px-3"
@@ -43,7 +43,7 @@ const LiveCards = [
       <img :src="Bg" class="rounded-[30px] overflow-hidden" />
     </div>
 
-    <div class="flex flex-col z-10 gap-9 items-center text-center">
+    <div class="flex flex-col z-10 gap-9 items-center text-center max-md:gap-3">
       <div class="flex flex-col gap-[18px] items-center">
         <div class="flex items-center gap-[30px] max-md:gap-2 max-lg:gap-5">
           <div
@@ -60,12 +60,12 @@ const LiveCards = [
       </div>
 
       <div
-        class="flex gap-[18px] px-8 justify-center items-center flex-wrap w-full max-md:flex-col"
+        class="flex gap-[18px] justify-center items-center max-2xl:grid max-2xl:grid-cols-2 w-full max-md:gap-1"
       >
         <div
           v-for="(card, index) in LiveCards"
           :key="index"
-          class="px-7 min-w-[265px] h-[290px] justify-between flex items-start flex-col gap-8 bg-white rounded-[30px] py-5 max-md:rounded-[20px] max-md:pt-8 max-md:pb-5 max-md:min-w-[unset] max-md:w-full"
+          class="px-7 min-w-[265px] shadow-[0_4px_10px_2px_rgba(0,0,0,0.10)] h-[290px] justify-between flex items-start flex-col gap-8 bg-white rounded-[30px] py-5 max-md:rounded-[20px] max-md:py-4 max-md:px-3 max-md:h-full max-md:aspect-square max-md:min-w-[unset] max-md:w-full"
         >
           <div
             class="text-[#000] font-semibold text-lg leading-[100%] whitespace-nowrap max-lg:text-base max-md:text-xs"
@@ -73,10 +73,14 @@ const LiveCards = [
             {{ card.title }}
           </div>
 
-          <div class="flex flex-col items-start justify-start gap-3">
-            <div class="flex flex-col gap-[5px] items-start justify-start">
+          <div
+            class="flex flex-col items-start justify-start gap-3 max-md:gap-2"
+          >
+            <div
+              class="flex flex-col gap-[5px] items-start justify-start max-md:gap-0"
+            >
               <div
-                class="text-black font-semibold text-[38px] leading-[100%] whitespace-nowrap"
+                class="text-black font-semibold text-[38px] leading-[100%] whitespace-nowrap max-md:text-2xl"
               >
                 {{ card.number }}
               </div>
@@ -89,8 +93,8 @@ const LiveCards = [
 
             <div
               :class="[
-                { 'w-full h-[9px]': index === 0 },
-                { 'w-auto h-[34px]': index === 2 },
+                { 'w-full h-[9px] max-md:h-[6px]': index === 0 },
+                { 'w-auto h-[34px] max-md:h-5': index === 2 },
                 { 'w-full h-[5px]': index === 3 },
               ]"
               v-if="card.image"
@@ -100,7 +104,7 @@ const LiveCards = [
 
             <button
               v-if="card.btn"
-              class="w-full py-[11px] bg-[#FF5B00] flex items-center justify-center text-sm rounded-[10px]"
+              class="w-full py-[11px] bg-[#FF5B00] flex items-center justify-center text-sm rounded-[10px] max-md:hidden"
             >
               STAGE 4 ENDING SOON
             </button>

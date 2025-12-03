@@ -42,7 +42,7 @@ const GenieCards = [
 
 <template>
   <div
-    class="px-[22px] mt-[132px] max-xl:mt-[100px] max-lg:mt-[60px] max-md:mt-9"
+    class="px-[22px] z-50 pointer-events-auto 0 mt-[132px] max-xl:mt-[100px] max-lg:mt-[60px] max-md:mt-9"
   >
     <div
       class="px-5 max-w-[2000px] mx-auto rounded-[40px] overflow-hidden py-14 h-full min-h-[681px] flex flex-col justify-center items-center bg-no-repeat bg-center bg-[url('@/assets/img/Home/GenieBg.png')] max-lg:bg-cover max-lg:bg-top max-lg:bg-[url('@/assets/img/Home/GenieBgMob.png')]"
@@ -63,7 +63,7 @@ const GenieCards = [
         </div>
 
         <div
-          class="flex base-x-p items-center max-2xl:flex-wrap justify-center self-stretch gap-[30px] "
+          class="flex base-x-p items-center max-2xl:flex-wrap justify-center self-stretch gap-[30px]"
         >
           <div
             v-for="(card, index) in GenieCards"
