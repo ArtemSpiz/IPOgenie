@@ -46,13 +46,14 @@ watch(isOpen, (newVal) => {
       :class="[
         'flex justify-between items-center rounded-[30px] py-5 px-10 w-full max-w-7xl max-md:px-5 max-md:py-3',
         colorBg ? 'bg-black/5 backdrop-blur-sm' : 'bg-transparent',
+        isOpen ? 'bg-transparent' : '',
       ]"
     >
       <router-link
         to="/"
         class="h-10 z-50 w-[190px] max-xl:h-auto max-xl:w-[115px]"
       >
-        <img :src="colorBg ? LogoBlack : Logo" alt="Logo" />
+        <img :src="colorBg ? LogoBlack : Logo" alt="Logo" class="z-50" />
       </router-link>
 
       <div class="flex z-50 items-center gap-7 max-xl:gap-5 max-lg:hidden">
@@ -88,6 +89,7 @@ watch(isOpen, (newVal) => {
     <transition name="fade">
       <div
         v-if="isOpen"
+        :class="colorBg ? 'bg-white text-black' : 'bg-black/90 text-white'"
         class="absolute h-screen pt-[100px] top-[0px] backdrop-blur-md left-0 right-0 shadow-lg rounded-b-2xl py-5 flex flex-col items-start px-10 gap-4 max-lg:flex z-40"
       >
         <router-link
