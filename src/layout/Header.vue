@@ -11,30 +11,13 @@ defineProps({
 });
 
 const HeaderLinks = [
-  {
-    title: "Platform",
-    link: "/news",
-  },
-  {
-    title: "Deals",
-    link: "/wallet",
-  },
-  {
-    title: "Token",
-    link: "/tokenomics",
-  },
-  {
-    title: "How It Works",
-  },
-  {
-    title: "Track Record",
-  },
-  {
-    title: "FAQ",
-  },
-  {
-    title: "Contact",
-  },
+  { title: "Platform", link: "/news" },
+  { title: "Deals", link: "/wallet" },
+  { title: "Token", link: "/tokenomics" },
+  { title: "How It Works", link: "/how-to-buy" },
+  { title: "Track Record", link: "/track-record" },
+  { title: "FAQ", link: "/faq" },
+  { title: "Contact", link: "/contact" },
 ];
 </script>
 
