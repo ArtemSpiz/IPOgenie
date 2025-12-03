@@ -9,41 +9,42 @@ import Invest from "@/components/Home/Invest.vue";
 import IPO from "@/components/Home/IPO.vue";
 import Live from "@/components/Home/Live.vue";
 import Opinions from "@/components/Home/Opinions.vue";
+import Opportunities from "@/components/Home/Opportunities.vue";
 import Overview from "@/components/Home/Overview.vue";
 import Powered from "@/components/Home/Powered.vue";
 import Pulse from "@/components/Home/Pulse.vue";
 import Roadmap from "@/components/Home/Roadmap.vue";
-import Safety from "@/components/Home/Safety.vue";
 import Scoring from "@/components/Home/Scoring.vue";
 import Solving from "@/components/Home/Solving.vue";
-import Token from "@/components/Home/Token.vue";
 import Tokenomics from "@/components/Home/Tokenomics.vue";
 import Traditional from "@/components/Home/Traditional.vue";
+import Utility from "@/components/Home/Utility.vue";
 import Whitepaper from "@/components/Home/Whitepaper.vue";
+import { FAQCards } from "@/constants/Home/FAQCards";
 </script>
 
 <template>
   <Hero />
   <Powered />
   <HowToBuy />
-  <Safety />
   <Live />
+  <Utility />
   <IPO />
-  <Token />
   <Invest />
+  <Opportunities />
   <Genie />
   <Scoring />
+  <Overview />
+  <Tokenomics />
+  <Roadmap />
   <Traditional />
   <Solving />
   <Differents />
-  <Overview />
-  <Roadmap />
-  <Tokenomics />
   <Whitepaper />
-  <FAQ />
   <Opinions />
-  <Community />
   <Pulse />
+  <FAQ :faqList="FAQCards" />
+  <Community />
 </template>
 
 <style scoped></style>

@@ -100,7 +100,7 @@ const HowCards = [
       </div>
 
       <div class="flex items-center gap-4 max-md:gap-[9px]">
-        <CustomButton bg-color="#16151A" arrow-color="#000" />
+        <CustomButton bg-color="#16151A" arrow-color="#000" to="/how-to-buy" />
         <CustomButton
           text="Read Whitepaper"
           arrow-color="#fff"

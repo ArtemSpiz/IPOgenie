@@ -24,7 +24,7 @@ const OpinionsVideos = [
 
 <template>
   <div
-    class="flex flex-col base-x-p justify-center items-center gap-3 mt-[138px]"
+    class="flex flex-col base-x-p justify-center items-center gap-3 mt-[138px] max-xl:mt-[100px] max-lg:mt-[80px] max-md:mt-10"
   >
     <div class="flex text-black flex-col gap-2 text-center items-center">
       <div class="title">
@@ -37,12 +37,14 @@ const OpinionsVideos = [
       </div>
     </div>
 
-    <div class="flex flex-col gap-6 w-full">
+    <div
+      class="flex flex-col self-stretch gap-6 w-full justify-center items-center"
+    >
       <div class="w-full max-w-[860px] h-auto">
         <img :src="MainVideo" />
       </div>
 
-      <div class="flex items-start justify-between">
+      <div class="flex items-start max-w-[860px] w-full justify-between">
         <div class="flex items-center gap-[10px]">
           <div class="w-12 aspect-square">
             <img :src="Logo" />

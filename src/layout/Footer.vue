@@ -65,7 +65,7 @@ const FooterSoc = [
           <div
             v-for="(soc, i) in FooterSoc"
             :key="i"
-            class="aspect-square w-14 rounded-lg cursor-pointer flex justify-center items-center bg-[#FF5B00] max-lg:w-10"
+            class="aspect-square w-14 rounded-lg cursor-pointer flex justify-center items-center bg-[#FF5B00] max-lg:w-10 transition-all duration-300 hover:rotate-2 hover:scale-110 hover:bg-[#e45006]"
           >
             <component :is="soc.icon" class="max-lg:w-6 aspect-square" />
           </div>
@@ -90,7 +90,7 @@ const FooterSoc = [
             <div
               v-for="(item, index) in link.links"
               :key="index"
-              class="font-inter cursor-pointer text-lg leading-[80%] max-md:text-sm"
+              class="font-inter cursor-pointer text-lg leading-[80%] max-md:text-sm transition-all duration-300 hover:text-[#FF5B00] hover:translate-x-1"
             >
               {{ item.link }}
             </div>

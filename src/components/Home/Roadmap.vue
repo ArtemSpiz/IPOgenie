@@ -112,7 +112,7 @@ const endSwipe = (e) => {
 
 <template>
   <div
-    class="flex gap-11 max-w-[2055px] mx-auto flex-col base-x-p mt-[260px] max-xl:mt-[180px] max-lg:mt-[80px] max-md:mt-10"
+    class="flex gap-11 max-w-[2055px] mx-auto flex-col base-x-p mt-[260px] max-xl:mt-[180px] max-lg:mt-[80px] max-md:mt-10 max-md:gap-5"
   >
     <div class="flex items-end justify-between max-md:flex-col max-md:gap-4">
       <div class="flex text-black flex-col z-10 gap-5">
@@ -123,7 +123,11 @@ const endSwipe = (e) => {
         </div>
       </div>
 
-      <ArrowsNextPrev :next="scrollNext" :prev="scrollPrev" />
+      <ArrowsNextPrev
+        class="md:flex hidden"
+        :next="scrollNext"
+        :prev="scrollPrev"
+      />
     </div>
 
     <div
@@ -171,6 +175,12 @@ const endSwipe = (e) => {
         </div>
       </div>
     </div>
+
+    <ArrowsNextPrev
+      class="md:hidden flex mx-auto"
+      :next="scrollNext"
+      :prev="scrollPrev"
+    />
   </div>
 </template>
 

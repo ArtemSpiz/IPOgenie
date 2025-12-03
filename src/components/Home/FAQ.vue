@@ -2,40 +2,12 @@
 import FAQArrow from "@/assets/icons/FAQArrow.vue";
 import { ref } from "vue";
 
-const FAQCards = [
-  {
-    title: "What is IPO Genie?",
-    text: "Here is our most frequently asked questions. If you can't find what you are looking for don't hesitate to contact us.",
+const props = defineProps({
+  faqList: {
+    type: Array,
+    required: true,
   },
-  {
-    title: "How do I join the $IPO presale?",
-    text: "Here is our most frequently asked questions. If you can't find what you are looking for don't hesitate to contact us.",
-  },
-  {
-    title: "Is IPO Genie a top presale to watch in 2025?",
-    text: "Here is our most frequently asked questions. If you can't find what you are looking for don't hesitate to contact us.",
-  },
-  {
-    title: "What is the $IPO token used for?",
-    text: "Here is our most frequently asked questions. If you can't find what you are looking for don't hesitate to contact us.",
-  },
-  {
-    title: "How does AI Deal Scoring work?",
-    text: "Here is our most frequently asked questions. If you can't find what you are looking for don't hesitate to contact us.",
-  },
-  {
-    title: "Is the $IPO token safe?",
-    text: "Here is our most frequently asked questions. If you can't find what you are looking for don't hesitate to contact us.",
-  },
-  {
-    title: "Which networks does IPO Genie support?",
-    text: "Here is our most frequently asked questions. If you can't find what you are looking for don't hesitate to contact us.",
-  },
-  {
-    title: "Can I stake $IPO?",
-    text: "Here is our most frequently asked questions. If you can't find what you are looking for don't hesitate to contact us.",
-  },
-];
+});
 
 const isOpen = ref(false);
 
@@ -60,7 +32,7 @@ const OpenFaq = (index) => {
 
     <div class="flex flex-col gap-2 w-full max-w-[900px] mx-auto">
       <div
-        v-for="(card, index) in FAQCards"
+        v-for="(card, index) in props.faqList"
         :key="index"
         class="flex flex-col gap-2 cursor-pointer"
         @click="OpenFaq(index)"

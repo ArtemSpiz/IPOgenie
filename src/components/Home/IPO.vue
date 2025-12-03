@@ -65,20 +65,20 @@ const IPOlinesCenter = [
   >
     <div class="flex flex-col gap-10 w-full">
       <div class="flex flex-col gap-7 items-center">
-        <div class="flex flex-col text-center gap-[17px]">
+        <div class="flex flex-col text-center gap-[17px] max-md:gap-3">
           <div
-            class="flex flex-wrap justify-center title text-black items-center gap-4"
+            class="flex flex-wrap justify-center title text-black items-center gap-4 max-md:gap-2"
           >
             <span class="whitespace-nowrap">You Missed</span>
             <span
-              class="bg-black text-white px-8 rounded-2xl flex items-center h-[70px] md:h-[90px] lg:h-[104px]"
+              class="bg-black text-white px-4 md:px-4 lg:px-8 rounded-2xl max-md:rounded-xl flex items-center h-[50px] md:h-[90px] lg:h-[104px]"
             >
-              <Uber />
+              <Uber class="h-[25px] w-auto md:h-[60px] lg:h-[70px]" />
             </span>
             <span class="whitespace-nowrap">at $5 Billion</span>
           </div>
 
-          <div class="title !text-[100px] text-[#FF5B00]">
+          <div class="title 2xl:!text-[100px] text-[#FF5B00]">
             By the $IPO, It was $70 Billion
           </div>
         </div>
@@ -91,12 +91,14 @@ const IPOlinesCenter = [
         </div>
       </div>
 
-      <div class="flex gap-[7px] flex-col lg:flex-row w-full">
-        <div class="flex flex-col gap-[7px] w-full lg:w-auto">
+      <div class="flex gap-[7px] flex-col 2xl:flex-col w-full">
+        <div
+          class="flex 2xl:flex-col gap-[7px] w-full 2xl:w-auto max-md:flex-col"
+        >
           <div
             v-for="(card, index) in IPOcards.slice(0, 2)"
             :key="index"
-            class="border-[0.5px] justify-between flex flex-col border-[#FF5B00] bg-white rounded-[30px] min-h-[235px] px-[18px] py-[22px] lg:w-[325px]"
+            class="border-[0.5px] justify-between flex flex-col border-[#FF5B00] bg-white rounded-[30px] min-h-[235px] px-[18px] py-[22px] 2xl:w-[325px] max-md:p-4 max-md:rounded-[20px]"
           >
             <div v-if="card.icon" class="w-8 h-8">
               <img :src="card.icon" alt="icon" />
@@ -104,7 +106,7 @@ const IPOlinesCenter = [
             <div class="flex flex-col gap-4">
               <div
                 v-if="card.title"
-                class="text-black font-inter text-2xl font-extrabold leading-[85%]"
+                class="text-black font-inter text-2xl font-extrabold leading-[85%] max-md:text-lg"
               >
                 {{ card.title }}
               </div>
@@ -119,10 +121,10 @@ const IPOlinesCenter = [
         </div>
 
         <div
-          class="border-[15px] items-center gap-8 justify-between px-[30px] py-10 bg-white flex flex-col rounded-[30px] shadow-[0_4px_20px_0_rgba(0,0,0,0.25)] border-[#EDEDED] w-full lg:flex-1"
+          class="border-[15px] items-center gap-8 justify-between px-[30px] py-10 bg-white flex flex-col rounded-[30px] shadow-[0_4px_20px_0_rgba(0,0,0,0.25)] border-[#EDEDED] w-full lg:flex-1 max-md:px-5 max-md:py-6 max-md:gap-5 max-md:rounded-[20px]"
         >
           <div
-            class="text-[32px] text-center lg:text-left text-black font-inter font-extrabold leading-[85%]"
+            class="text-[32px] text-center lg:text-left text-black font-inter font-extrabold leading-[85%] max-md:text-[22px]"
           >
             What insider Got vs What You Got
           </div>
@@ -131,37 +133,42 @@ const IPOlinesCenter = [
             <div
               v-for="(link, index) in IPOlinesCenter"
               :key="index"
-              class="w-full flex bg-[#ECECEC] rounded-[20px] items-center justify-between p-5 flex-wrap gap-4"
+              class="w-full flex bg-[#ECECEC] rounded-[20px] items-center justify-between p-5 flex-wrap gap-4 max-md:items-start max-md:gap-3 max-md:p-4 max-md:rounded-[15px]"
             >
-              <div class="flex gap-[11px] items-center flex-wrap">
+              <div class="flex gap-[11px] items-center flex-wrap max-md:gap-3">
                 <div class="w-[30px] h-[30px] flex-shrink-0">
                   <img :src="link.icon" alt="company icon" />
                 </div>
 
-                <div class="flex gap-5 items-center flex-wrap">
+                <div
+                  class="flex gap-5 items-center flex-wrap max-md:flex-col max-md:items-start max-md:gap-1"
+                >
                   <div
-                    class="text-xl font-inter text-black font-extrabold whitespace-nowrap"
+                    class="text-xl font-inter text-black font-extrabold whitespace-nowrap max-md:text-base"
                   >
                     {{ link.name }}
                   </div>
 
                   <div
-                    class="text-xl flex items-center gap-[10px] font-inter text-black font-medium whitespace-nowrap"
+                    class="text-xl flex items-center gap-[10px] font-inter text-black font-medium whitespace-nowrap max-md:text-sm"
                   >
                     Pre-IPO <Arrow fill-color="#000" /> IPO
                   </div>
                 </div>
               </div>
 
-              <div class="flex items-center gap-2 flex-wrap">
+              <div
+                class="flex items-center gap-2 flex-wrap max-md:flex-col max-md:items-start max-md:gap-1"
+              >
                 <div
-                  class="text-xl flex items-center gap-[10px] font-inter text-[#00CA5B] font-medium whitespace-nowrap"
+                  class="text-xl flex items-center gap-[10px] font-inter text-[#00CA5B] font-medium whitespace-nowrap max-md:text-base"
                 >
                   {{ link.number1 }} <Arrow fill-color="#00CA5B" />
                   {{ link.number2 }}
                 </div>
+
                 <div
-                  class="text-base font-inter text-[#898989] font-medium whitespace-nowrap"
+                  class="text-base font-inter text-[#898989] font-medium whitespace-nowrap max-md:text-sm"
                 >
                   {{ link.x }}
                 </div>
@@ -170,10 +177,10 @@ const IPOlinesCenter = [
           </div>
 
           <div class="flex px-5 items-center flex-col gap-2 w-full">
-            <div class="w-full h-[1px] bg-black"></div>
+            <div class="w-full h-[1px] bg-black max-md:opacity-50"></div>
 
             <div
-              class="text-base text-center font-inter text-[#898989] leading-[142%]"
+              class="text-base text-center font-inter text-[#898989] leading-[142%] max-md:text-sm max-md:px-2"
             >
               By the time you could buy on IPO day, the biggest gains were
               already captured by VCs and insiders
@@ -181,11 +188,13 @@ const IPOlinesCenter = [
           </div>
         </div>
 
-        <div class="flex flex-col gap-[7px] w-full lg:w-auto">
+        <div
+          class="flex 2xl:flex-col gap-[7px] w-full 2xl:w-auto max-md:flex-col"
+        >
           <div
             v-for="(card, index) in IPOcards.slice(2, 4)"
             :key="index + 2"
-            class="border-[0.5px] justify-between flex flex-col border-[#FF5B00] bg-white rounded-[30px] min-h-[235px] px-[18px] py-[22px] lg:w-[325px]"
+            class="border-[0.5px] justify-between flex flex-col border-[#FF5B00] bg-white rounded-[30px] min-h-[235px] px-[18px] py-[22px] 2xl:w-[325px] max-md:p-4 max-md:rounded-[20px]"
           >
             <div v-if="card.icon" class="w-8 h-8">
               <img :src="card.icon" alt="icon" />
@@ -193,7 +202,7 @@ const IPOlinesCenter = [
             <div class="flex flex-col gap-4">
               <div
                 v-if="card.title"
-                class="text-black font-inter text-2xl font-extrabold leading-[85%]"
+                class="text-black font-inter text-2xl font-extrabold leading-[85%] max-md:text-lg"
               >
                 {{ card.title }}
               </div>
@@ -206,13 +215,13 @@ const IPOlinesCenter = [
 
               <div
                 v-if="card.text"
-                class="text-black italic text-[20px] leading-[142%]"
+                class="text-black italic text-[20px] leading-[142%] max-md:text-base"
               >
                 {{ card.text }}
               </div>
               <div
                 v-if="card.link"
-                class="text-[#FF5B00] italic font-bold text-[22px] leading-[142%]"
+                class="text-[#FF5B00] italic font-bold text-[22px] leading-[142%] max-md:text-base"
               >
                 {{ card.link }}
               </div>

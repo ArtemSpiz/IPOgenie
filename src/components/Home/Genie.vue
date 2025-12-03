@@ -56,7 +56,7 @@ const GenieCards = [
           <div class="title">
             How <span class="sectitle font-semibold">IPO Genie</span> Works
           </div>
-          <div class="description">
+          <div class="description px-2">
             IPO Genie simplifies early-stage investing into a transparent,
             data-driven process anyone can follow.
           </div>
