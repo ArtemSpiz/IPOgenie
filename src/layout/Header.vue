@@ -50,7 +50,7 @@ const HeaderLinks = [
         colorBg ? 'bg-black/5 backdrop-blur-sm' : 'bg-transparent',
       ]"
     >
-      <router-link to="/" class="h-10 max-xl:h-auto max-xl:w-[115px]">
+      <router-link to="/" class="h-10 w-[190px] max-xl:h-auto max-xl:w-[115px]">
         <img :src="colorBg ? LogoBlack : Logo" alt="" />
       </router-link>
 
