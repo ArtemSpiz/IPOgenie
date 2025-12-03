@@ -172,8 +172,8 @@ onMounted(async () => {
               <div class="text-black text-2xl font-bold leading-[140%]">
                 {{ card.price }}
               </div>
-              <div class="h-8 w-[138px]">
-                <img :src="card.name" />
+              <div class="h-8 max-w-[170px] w-auto">
+                <img :src="card.name" class="object-contain"/>
               </div>
             </div>
             <div class="text-black max-w-[180px] text-sm leading-[130%]">
