@@ -28,7 +28,7 @@
         <!-- Left Carousel - Card Images -->
         <div class="flex-1 w-full lg:w-auto">
           <div
-            class="relative overflow-hidden rounded-3xl cursor-grab active:cursor-grabbing select-none"
+            class="relative overflow-hidden md:rounded-3xl cursor-grab active:cursor-grabbing select-none"
           >
             <div
               class="flex transition-transform duration-500 ease-out"
@@ -69,7 +69,7 @@
         <!-- Right Carousel - Info Columns -->
         <div class="flex-1 w-full lg:w-auto">
           <div
-            class="relative overflow-hidden rounded-3xl p-4 md:p-8 cursor-grab active:cursor-grabbing select-none"
+            class="relative overflow-hidden md:rounded-3xl p-4 md:p-8 cursor-grab active:cursor-grabbing select-none"
           >
             <div
               class="flex transition-transform duration-500 ease-out"
@@ -86,7 +86,7 @@
                 class="min-w-full px-4"
               >
                 <div
-                  class="space-y-6 text-sm md:text-[9px] leading-relaxed text-neutral-300"
+                  class="space-y-6 text-[9px] leading-relaxed text-neutral-300"
                 >
                   <p v-for="(paragraph, pIndex) in column" :key="pIndex">
                     {{ paragraph }}

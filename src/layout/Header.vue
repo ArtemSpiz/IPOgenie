@@ -17,8 +17,8 @@ const HeaderLinks = [
   { title: "Platform", link: "/news" },
   { title: "Deals", link: "/wallet" },
   { title: "Token", link: "/tokenomics" },
-  { title: "How It Works", link: "/how-to-buy" },
-  { title: "Track Record", link: "/track-record" },
+  { title: "How It Works", link: "/how-it-works" },
+  { title: "Track Record", link: "/roadmap" },
   { title: "FAQ", link: "/faq" },
   { title: "Contact", link: "/contact" },
 ];

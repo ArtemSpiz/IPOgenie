@@ -18,7 +18,7 @@
       <div
         class="mt-4 flex z-10 w-[550px] h-auto justify-center max-md:max-w-[400px] max-md:w-auto"
       >
-        <img :src="CardsHero" class="object-contain" />
+        <img :src="CardsHero" class="object-contain" loading="eager" />
       </div>
       <div
         class="bottom-[50px] absolute z-0 flex w-[550px] h-auto justify-center max-md:max-w-[400px] max-md:w-auto"

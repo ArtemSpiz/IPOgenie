@@ -8,7 +8,14 @@ import OpportunitiesName1 from "@/assets/img/Home/OpportunitiesName1.png";
 import OpportunitiesName2 from "@/assets/img/Home/OpportunitiesName2.png";
 import OpportunitiesName3 from "@/assets/img/Home/OpportunitiesName3.png";
 import OpportunitiesName4 from "@/assets/img/Home/OpportunitiesName4.png";
+
 import CustomButton from "@/ui/CustomButton.vue";
+
+import { onMounted, ref, nextTick } from "vue";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const OpportunitiesCards = [
   {
@@ -36,13 +43,81 @@ const OpportunitiesCards = [
     text: "Access to all deals + Anytime allocation + Investment insurance",
   },
 ];
+
+const cardsWrapper = ref(null);
+const sectionRef = ref(null);
+const pinContainer = ref(null);
+
+onMounted(async () => {
+  if (window.innerWidth >= 768) return;
+  await nextTick();
+
+  const wrapper = cardsWrapper.value;
+  const cards = wrapper.querySelectorAll(".card-item");
+  if (!cards.length) return;
+
+  const spacing = 40;
+
+  cards.forEach((c, i) => {
+    c.style.zIndex = 100 - (cards.length - i);
+    gsap.set(c, { position: "relative" });
+  });
+
+  const heights = [...cards].map((c) => c.getBoundingClientRect().height);
+
+  const finalHeight = heights[0] + spacing * (cards.length - 1) + 125;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: sectionRef.value,
+      start: "top top",
+      end: `+=${finalHeight * 1.2}`,
+      scrub: 1,
+      pin: true,
+      pinSpacing: false,
+    },
+  });
+
+  tl.to(
+    wrapper,
+    {
+      height: finalHeight,
+      ease: "none",
+    },
+    0
+  );
+
+  let accumulatedOffset = 0;
+
+  cards.forEach((card, i) => {
+    if (i === 0) {
+      gsap.set(card, { y: 0 });
+      return;
+    }
+
+    accumulatedOffset += heights[i - 1] - spacing;
+
+    tl.to(
+      card,
+      {
+        y: -accumulatedOffset,
+        ease: "none",
+      },
+      i * 0.15
+    );
+  });
+});
 </script>
 
 <template>
   <div
-    class="mt-[120px] flex flex-col items-center justify-center gap-16 base-x-p max-md:gap-8 max-xl:mt-[100px] max-lg:mt-16 max-md:mt-10"
+    ref="sectionRef"
+    class="mt-[80px] flex flex-col items-center justify-center gap-16 base-x-p max-md:gap-8 max-lg:mt-16 max-md:mt-10 max-md:justify-start"
   >
-    <div class="flex flex-col items-center justify-center gap-9 max-md:gap-6">
+    <div
+      ref="pinContainer"
+      class="flex flex-col items-center justify-center gap-9 max-md:gap-6 w-full"
+    >
       <div
         class="flex flex-col text-black text-center gap-6 items-center justify-center"
       >
@@ -56,14 +131,16 @@ const OpportunitiesCards = [
       </div>
 
       <div
-        class="flex gap-7 items-center self-stretch justify-center xl:flex max-xl:grid max-xl:grid-cols-2 max-md:flex max-md:flex-col"
+        ref="cardsWrapper"
+        class="flex gap-7 items-center self-stretch justify-center xl:flex max-xl:grid max-xl:grid-cols-2 max-md:flex max-md:flex-col max-md:justify-start max-md:overflow-hidden"
       >
         <div
           v-for="(card, index) in OpportunitiesCards"
           :key="index"
+          class="card-item"
           :class="[
-            'relative xl:w-[290px] w-full rounded-[20px] overflow-hidden justify-end flex-col flex items-end backdrop-blur-[10px]',
-            'h-[405px] max-lg:h-[350px] max-md:h-[300px] max-sm:h-[260px]',
+            'relative xl:w-[290px] max-md:max-w-[290px] w-full rounded-[20px] overflow-hidden justify-end flex-col flex items-end backdrop-blur-[10px]',
+            'min-h-[405px] ',
             {
               'bg-[linear-gradient(19deg,_rgba(255,255,255,0.72)_3.5%,rgba(255,91,0,0.72)_94.2%)] shadow-[0_4px_100px_-44px_#FF5B00]':
                 index === 0,
@@ -83,27 +160,23 @@ const OpportunitiesCards = [
           ]"
         >
           <div
-            class="absolute top-0 right-1/2 translate-x-1/2 w-full h-auto max-w-[290px] max-md:max-w-[230px] max-sm:max-w-[180px]"
+            class="absolute top-0 right-1/2 translate-x-1/2 w-full h-auto max-w-[290px]"
           >
             <img :src="card.image" />
           </div>
 
           <div
-            class="flex px-2 flex-col rounded-[20px] overflow-hidden w-full pb-7 pt-8 justify-center items-center text-center backdrop-blur-[10px] gap-3 max-md:pb-5 max-md:pt-6 max-sm:pb-4"
+            class="flex px-2 flex-col rounded-[20px] overflow-hidden w-full pb-7 pt-8 justify-center items-center text-center backdrop-blur-[10px] gap-3"
           >
             <div class="flex flex-col items-center">
-              <div
-                class="text-black text-2xl max-md:text-xl max-sm:text-lg font-bold leading-[140%]"
-              >
+              <div class="text-black text-2xl font-bold leading-[140%]">
                 {{ card.price }}
               </div>
-              <div class="h-8 max-md:h-7 max-sm:h-6 w-auto">
-                <img :src="card.name" />
+              <div class="h-8 max-w-[170px] w-auto">
+                <img :src="card.name" class="object-contain" />
               </div>
             </div>
-            <div
-              class="text-black max-w-[180px] text-sm max-md:text-xs leading-[130%]"
-            >
+            <div class="text-black max-w-[180px] text-sm leading-[130%]">
               {{ card.text }}
             </div>
           </div>

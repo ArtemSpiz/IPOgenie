@@ -1,6 +1,9 @@
 <template>
   <div
-    class="base-x-p mt-10 flex gap-10 items-center self-stretch max-w-[1300px] mx-auto flex-wrap max-md:gap-5"
+    :class="[
+      'mt-10 flex gap-10 items-center self-stretch max-w-[1300px] mx-auto flex-wrap max-md:gap-5',
+      basePadding ? ' ' : 'base-x-p',
+    ]"
   >
     <div
       v-for="(card, i) in SocialsCards"
@@ -12,7 +15,9 @@
       ]"
     >
       <div class="flex flex-col gap-2">
-        <div class="font-inter text-2xl font-bold max-md:text-xl">{{ card.title }}</div>
+        <div class="font-inter text-start text-2xl font-bold max-md:text-xl">
+          {{ card.title }}
+        </div>
         <div class="text-xs">{{ card.subtitle }}</div>
       </div>
       <component :is="card.icon" />
@@ -36,4 +41,11 @@ const SocialsCards = [
     icon: Xicon,
   },
 ];
+
+defineProps({
+  basePadding: {
+    type: Boolean,
+    default: false,
+  },
+});
 </script>
