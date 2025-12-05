@@ -1,6 +1,6 @@
 <template>
   <section
-    class="base-x-p mt-10 max-w-[2000px] mx-auto mb-[200px] max-xl:mb-[150px] max-md:mb-[80px]"
+    class="base-x-p mt-10 max-w-[2000px] mx-auto mb-[200px] max-xl:mb-[150px] max-md:mb-[50px]"
   >
     <div
       class="flex items-center self-stretch justify-center max-md:flex-col max-md:gap-7"

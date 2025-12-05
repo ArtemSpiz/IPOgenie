@@ -48,16 +48,16 @@ const HowCards = [
       class="flex flex-col base-x-p z-10 relative items-center justify-center gap-16 max-lg:gap-10 max-md:gap-8"
     >
       <div
-        class="flex justify-center items-center text-center text-black flex-col gap-10"
+        class="flex justify-center items-center text-center text-black flex-col gap-10 max-md:gap-4"
       >
-        <div class="title text-center">
+        <div class="title text-center max-md:max-w-[200px]">
           How to Buy <span class="sectitle">IPO Genie</span>
         </div>
         <div class="description max-w-[570px]">
           Forged from aerospace-grade steel. Optimized for global commerce.
           Choose your level of access.
         </div>
-        <CustomButton text="Buy $IPO Now" />
+        <CustomButton text-color="#fff" />
       </div>
 
       <div

@@ -11,7 +11,7 @@ import OpportunitiesName4 from "@/assets/img/Home/OpportunitiesName4.png";
 
 import CustomButton from "@/ui/CustomButton.vue";
 
-import { onMounted, ref, nextTick } from "vue";
+import { onMounted, ref, nextTick, onUnmounted } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -106,6 +106,11 @@ onMounted(async () => {
       i * 0.15
     );
   });
+});
+
+onUnmounted(() => {
+  if (tl) tl.kill();
+  ScrollTrigger.getAll().forEach((st) => st.kill());
 });
 </script>
 

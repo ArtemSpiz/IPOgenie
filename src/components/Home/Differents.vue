@@ -92,7 +92,7 @@ const DifferentCards = [
             },
           ]"
         >
-          <img :src="card.image" />
+          <img :src="card.image" class="object-contain"/>
         </div>
       </div>
     </div>

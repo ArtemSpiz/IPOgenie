@@ -13,7 +13,7 @@
         >
           <div
             :class="card.titleClass"
-            class="text-black text-[100px] font-inter font-extrabold leading-[80%] max-2xl:text-[70px] max-lg:text-[40px]"
+            class="text-black text-[100px] font-inter font-extrabold leading-[80%] max-2xl:text-[70px] max-lg:text-[50px]"
           >
             {{ card.title }}
           </div>
@@ -36,7 +36,7 @@
 <script setup>
 const TokenStatsCards = [
   {
-    title: "436,900,000,000",
+    title: "437B",
     subtitle: "Total $IPO Supply",
     titleClass: "text-4xl md:text-5xl font-bold tracking-tight text-black",
     line: true,
@@ -49,7 +49,7 @@ const TokenStatsCards = [
     line: true,
   },
   {
-    title: "Utility & Governance",
+    title: "Utility",
     subtitle: "Token Type",
     titleClass:
       "text-3xl md:text-4xl font-bold tracking-tight text-black leading-tight",

@@ -162,7 +162,7 @@ const segments = (() => {
             <div
               v-for="(card, i) in TokenomicsCards"
               :key="i"
-              class="flex flex-col cursor-pointer"
+              class="flex flex-col cursor-pointer gap-2"
               @mouseenter="hoveredSegment = i"
               @mouseleave="hoveredSegment = null"
             >

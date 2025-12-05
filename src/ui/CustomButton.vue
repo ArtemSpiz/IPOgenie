@@ -16,6 +16,8 @@ const props = defineProps({
   /** NEW PROPS **/
   link: { type: String, default: null }, // external link
   to: { type: [String, Object], default: null }, // router-link
+
+  icon: { type: String, default: null },
 });
 
 const emit = defineEmits(["click"]);
@@ -85,6 +87,7 @@ const handleClick = (event) => {
   >
     <span>{{ text }}</span>
     <div
+      v-if="!icon"
       class="w-10 h-10 justify-center rounded-md items-center flex max-md:w-6 max-md:h-6"
       :style="{ background: bgArrow }"
     >
@@ -93,5 +96,7 @@ const handleClick = (event) => {
         class="max-md:w-2 max-md:h-2 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
       />
     </div>
+
+    <component v-if="icon" :is="icon" />
   </button>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 gap-6 md:gap-8 text-left">
+  <div class="grid grid-cols-2 gap-6 md:gap-8 text-left max-md:gap-3">
     <StepCard
       v-for="(step, index) in steps"
       :key="step.number"

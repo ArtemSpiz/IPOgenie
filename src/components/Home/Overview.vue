@@ -57,34 +57,41 @@ const OverviewCards = [
         class="flex flex-col gap-4 max-md:gap-[5px]"
       >
         <div
-          class="flex gap-3 justify-between items-start min-h-[130px] max-md:flex-col max-md:h-max"
+          class="flex gap-3 justify-between items-start min-h-[130px] max-md:flex-col max-md:gap-1 max-md:h-full max-md:min-h-0"
         >
-          <div class="flex flex-1 gap-5 items-center max-md:gap-4">
-            <div class="w-16 h-16 max-lg:w-[30px] max-lg:h-[30px]">
-              <img :src="card.icon" />
+          <div
+            class="flex flex-1 max-md:flex-[0] gap-5 items-center max-md:gap-1"
+          >
+            <div class="w-16 h-16 max-lg:w-[30px] max-lg:h-auto">
+              <img :src="card.icon" class="object-contain"/>
             </div>
             <div
-              class="text-black font-inter text-[24px] font-extrabold leading-[85%] max-w-[350px] max-lg:text-xl max-md:text-lg max-md:max-w-[200px] max-md:leading-[120%]"
+              class="text-black font-inter text-[24px] font-extrabold leading-[85%] max-w-[350px] max-lg:text-xl max-md:text-lg  max-md:leading-[120%] max-md:max-w-full"
             >
               {{ card.title }}
             </div>
           </div>
           <div
-            class="description text-black flex-1 max-w-[510px] max-md:!text-[10px]"
+            class="description max-md:pl-[35px] text-black flex-1 max-md:flex-[0] max-w-[510px] max-md:!text-[10px]"
           >
             {{ card.text }}
           </div>
         </div>
 
-        <div class="flex justify-end">
+        <div class="flex h-max justify-end">
           <button
-            class="flex gap-3 items-center text-black text-xl max-lg:text-base max-md:text-[10px] max-md:gap-2"
+            class="flex group gap-3 max-md:h-4 items-center text-black text-xl max-lg:text-base max-md:text-[10px] max-md:gap-2"
           >
-            Read More <ArrowReadMore />
+            Read More
+            <ArrowReadMore
+              class="transition-transform duration-300 group-hover:-translate-y-[0.5px] group-hover:translate-x-1"
+            />
           </button>
         </div>
 
-        <div class="w-full h-auto"><img :src="Line" /></div>
+        <div class="w-full h-auto">
+          <img :src="Line" class="object-contain" />
+        </div>
       </div>
     </div>
   </div>

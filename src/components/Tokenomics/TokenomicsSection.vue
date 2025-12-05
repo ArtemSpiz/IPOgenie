@@ -23,43 +23,51 @@
     >
       <!-- Allocation Table -->
       <div class="w-full max-w-[60%] max-lg:max-w-full">
-        <div class="flex items-center gap-4 max-md:gap-2">
+        <div class="flex items-center gap-4 max-md:gap-1">
           <div
-            class="bg-[#FF5B00] whitespace-nowrap text-white max-md:text-sm font-medium py-4 px-10 rounded-[10px] text-center max-lg:px-5 max-lg:py-2"
+            class="bg-[#FF5B00] whitespace-nowrap text-white max-md:text-[9px] font-medium py-4 px-10 rounded-[10px] text-center max-lg:border-[5px] max-lg:px-3 max-lg:py-2"
           >
             Allocation
           </div>
           <div
-            class="bg-[#FF5B00] whitespace-nowrap text-white max-md:text-sm font-medium py-4 px-10 rounded-[10px] text-center max-lg:px-5 max-lg:py-2"
+            class="bg-[#FF5B00] whitespace-nowrap text-white max-md:text-[9px] font-medium py-4 px-10 rounded-[10px] text-center max-lg:border-[5px] max-lg:px-3 max-lg:py-2"
           >
             % of Supply
           </div>
           <div
-            class="bg-[#FF5B00] whitespace-nowrap text-white max-md:text-sm font-medium py-4 px-10 rounded-[10px] text-center max-lg:px-5 max-lg:py-2"
+            class="bg-[#FF5B00] whitespace-nowrap text-white max-md:text-[9px] font-medium py-4 px-10 rounded-[10px] text-center max-lg:border-[5px] max-lg:px-3 max-lg:py-2"
           >
             Strategy
           </div>
         </div>
-        <div class="rounded-[10px] mt-3 flex flex-col border border-black">
+        <div class="rounded-[10px] mt-3 flex flex-col border border-black max-md:mt-1">
           <div
             v-for="(allocation, index) in TokenomicsCards"
             :key="index"
-            class="flex flex-col"
+            class="flex flex-col max-md:p-5"
           >
             <div
               :class="[
-                'h-px w-full bg-black',
-                index === TokenomicsCards.length ? 'hidden' : 'flex',
+                'h-px w-full bg-black max-md:hidden',
+                index === 0 ? 'hidden' : 'flex',
               ]"
             ></div>
-            <div class="grid grid-cols-3 gap-0 items-center">
-              <div class="py-4 px-6 font-medium text-black">
+            <div
+              class="grid grid-cols-3 gap-0 items-center max-md:flex max-md:items-start max-md:justify-between"
+            >
+              <div
+                class="py-4 px-6 font-medium max-md:text-xs text-black max-md:p-0 max-md:min-w-[46px]"
+              >
                 {{ allocation.name }}
               </div>
-              <div class="py-4 px-6 font-bold text-black text-center">
+              <div
+                class="py-4 px-6 font-bold text-black text-center max-md:text-xs max-md:p-0"
+              >
                 {{ allocation.percentage }}
               </div>
-              <div class="py-4 px-6 text-black text-start text-sm">
+              <div
+                class="py-4 px-6 text-black text-start text-sm max-md:text-xs max-md:p-0 max-md:w-[200px]"
+              >
                 {{ allocation.strategy }}
               </div>
             </div>
@@ -69,7 +77,7 @@
 
       <!-- Donut Chart (dynamic from file 1) -->
       <div
-        class="flex right-0 top-1/2 -translate-y-1/2 absolute justify-center items-center max-lg:relative max-lg:translate-y-0 max-2xl:w-[430px] max-2xl:h-[450px] max-lg:h-auto max-lg:mx-auto max-md:max-w-[430px] max-md:w-full"
+        class="flex right-0 max-2xl:right-[-60px] max-lg:right-0 top-1/2 -translate-y-1/2 absolute justify-center items-center max-lg:relative max-lg:translate-y-0 max-2xl:w-[430px] max-2xl:h-[450px] max-lg:h-auto max-lg:mx-auto max-md:max-w-[430px] max-md:w-full"
       >
         <svg
           width="500"
@@ -130,12 +138,12 @@
                 index === 0,
             },
             {
-              'bottom-[110px] left-[110px] max-[450px]:bottom-[20%] max-[450px]:left-[25%]':
+              'bottom-[110px] left-[110px] max-lg:bottom-[90px] max-[450px]:bottom-[20%] max-[450px]:left-[25%]':
                 index === 1,
             },
             { 'top-[43%] left-[60px] max-[450px]:left-[13%]': index === 2 },
             {
-              'top-[110px] left-[110px] max-[450px]:top-[20%] max-[450px]:left-[25%]':
+              'top-[110px] left-[110px] max-lg:top-[100px] max-[450px]:top-[20%] max-[450px]:left-[25%]':
                 index === 3,
             },
             {

@@ -11,7 +11,7 @@ import OpportunitiesName4 from "@/assets/img/Home/OpportunitiesName4.png";
 
 import CustomButton from "@/ui/CustomButton.vue";
 
-import { onMounted, ref, nextTick } from "vue";
+import { onMounted, ref, nextTick, onUnmounted } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -107,6 +107,11 @@ onMounted(async () => {
     );
   });
 });
+
+onUnmounted(() => {
+  if (tl) tl.kill();
+  ScrollTrigger.getAll().forEach((st) => st.kill());
+});
 </script>
 
 <template>
@@ -173,7 +178,7 @@ onMounted(async () => {
                 {{ card.price }}
               </div>
               <div class="h-8 max-w-[170px] w-auto">
-                <img :src="card.name" class="object-contain"/>
+                <img :src="card.name" class="object-contain" />
               </div>
             </div>
             <div class="text-black max-w-[180px] text-sm leading-[130%]">

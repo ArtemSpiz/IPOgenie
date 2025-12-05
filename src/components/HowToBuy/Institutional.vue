@@ -6,7 +6,9 @@ import CustomButton from "@/ui/CustomButton.vue";
   <div
     class="flex flex-col justify-center items-center gap-16 base-x-p max-w-[2000px] mx-auto mt-[110px] max-lg:mt-[90px] max-md:mt-[70px] max-lg:gap-7"
   >
-    <div class="flex flex-col text-black items-center gap-8 text-center">
+    <div
+      class="flex flex-col text-black items-center gap-8 text-center max-md:gap-5"
+    >
       <div class="title max-w-[730px]">
         Institutional <span class="sectitle">Grade Retail</span> Accessible
       </div>
@@ -19,10 +21,10 @@ import CustomButton from "@/ui/CustomButton.vue";
         handle the diligence.
       </div>
       <div
-        class="max-w-[670px] font-inter text-[32px] font-extrabold !leading-[80%] max-lg:text-2xl"
+        class="max-w-[670px] font-inter text-[32px] font-extrabold !leading-[80%] max-lg:text-sm"
       >
-        Your allocation is recorded on-chain instantly. Your liquidity is
-        secured.
+        <div>Your allocation is recorded on-chain instantly.</div>
+        <div>Your liquidity is secured.</div>
       </div>
     </div>
 

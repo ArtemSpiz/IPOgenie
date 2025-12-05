@@ -115,9 +115,7 @@ const lastCards = computed(() => {
       </div>
 
       <div class="flex gap-[7px] flex-col 2xl:flex-col w-full">
-        <div
-          class="flex 2xl:flex-col gap-[7px] w-full 2xl:w-auto max-md:flex-col"
-        >
+        <div class="flex gap-[7px] w-full 2xl:w-auto max-md:flex-col">
           <div
             v-for="(card, index) in firstCards"
             :key="index"
@@ -209,13 +207,11 @@ const lastCards = computed(() => {
           </div>
         </div>
 
-        <div
-          class="flex 2xl:flex-col gap-[7px] w-full 2xl:w-auto max-md:flex-col"
-        >
+        <div class="flex gap-[7px] w-full 2xl:w-auto max-md:flex-col">
           <div
             v-for="(card, index) in lastCards"
             :key="index + 2"
-            class="border-[0.5px] flex-1 justify-between flex flex-col border-[#FF5B00] bg-white rounded-[30px] min-h-[235px] px-[18px] py-[22px] 2xl:w-[325px] max-md:p-5 max-md:pb-3 max-md:rounded-[15px] max-md:min-h-[90px] max-md:h-full max-md:flex-row max-md:gap-4"
+            class="border-[0.5px] flex-1 justify-between max-md:justify-start flex flex-col border-[#FF5B00] bg-white rounded-[30px] min-h-[235px] px-[18px] py-[22px] 2xl:w-[325px] max-md:p-5 max-md:pb-3 max-md:rounded-[15px] max-md:min-h-[90px] max-md:h-full max-md:flex-row max-md:gap-4"
           >
             <div
               v-if="card.icon"

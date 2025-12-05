@@ -7,7 +7,7 @@ import CustomButton from "@/ui/CustomButton.vue";
     class="pt-40 base-x-p max-w-[2000px] mx-auto max-md:pt-28 max-sm:pt-24"
   >
     <div
-      class="bg-[url('@/assets/img/Tokenomics/HeroBg.png')] bg-cover bg-right bg-no-repeat rounded-3xl overflow-hidden relative min-h-[550px] flex items-center max-md:min-h-[420px] max-sm:min-h-[360px] max-md:items-end"
+      class="bg-[url('@/assets/img/Tokenomics/HeroBg.png')] bg-cover bg-right bg-no-repeat rounded-3xl overflow-hidden relative min-h-[550px] flex items-center max-md:min-h-[420px] max-sm:min-h-[360px] max-md:bg-[url('@/assets/img/Tokenomics/HeroBgMob.png')] max-md:items-start"
     >
       <div
         class="md:pl-16 max-w-[785px] z-10 pl-10 relative max-md:p-6 max-sm:p-5 max-sm:pb-8"
@@ -31,10 +31,7 @@ import CustomButton from "@/ui/CustomButton.vue";
         </p>
 
         <!-- BUTTON -->
-        <CustomButton
-          class=""
-          text="Join the Presale"
-        />
+        <CustomButton class="!w-max gap-3" text="Join the Presale" />
       </div>
     </div>
   </section>

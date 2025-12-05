@@ -17,7 +17,7 @@
     </p>
 
     <div
-      class="rounded-[30px] max-md:rounded-[15px] h-[450px] px-4 overflow-hidden relative bg-white shadow-[0_4px_20px_2px_rgba(0,0,0,0.25)] gap-16 flex flex-col justify-center items-center max-md:h-max max-md:py-8 max-md:gap-8"
+      class="rounded-[30px] max-md:rounded-[15px] h-[450px] px-4 overflow-hidden relative bg-white shadow-[0_4px_20px_2px_rgba(0,0,0,0.25)] gap-16 flex flex-col justify-center items-center max-md:h-max max-md:py-8 max-md:gap-4"
     >
       <div class="flex text-center flex-col gap-7 max-md:gap-3">
         <div

@@ -127,7 +127,7 @@ const endSwipe = (e) => {
 
     <div
       ref="carousel"
-      class="flex gap-[18px] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
+      class="flex gap-[18px] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar "
       @touchstart="startSwipe"
       @touchend="endSwipe"
     >
@@ -171,7 +171,12 @@ const endSwipe = (e) => {
       </div>
     </div>
 
-    <div class="w-full flex items-center justify-center">
+    <div class="w-full mt-2 flex flex-col gap-7 items-center justify-center">
+      <ArrowsNextPrev
+        class="md:hidden flex mx-auto"
+        :next="scrollNext"
+        :prev="scrollPrev"
+      />
       <CustomButton text="Start Your Journey" class="!w-max gap-5" />
     </div>
   </div>

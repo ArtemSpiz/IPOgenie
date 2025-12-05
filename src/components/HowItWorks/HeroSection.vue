@@ -14,7 +14,7 @@
 
     <StepsGrid />
 
-    <div class="mt-12 flex justify-center">
+    <div class="mt-12 flex justify-center max-md:mt-4">
       <CustomButton text="Start Your Journey" class="!w-full gap-5" />
     </div>
   </section>

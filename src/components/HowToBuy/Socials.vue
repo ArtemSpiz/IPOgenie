@@ -14,8 +14,10 @@
         { 'bg-[#000]': i === 1 },
       ]"
     >
-      <div class="flex flex-col gap-2">
-        <div class="font-inter text-start text-2xl font-bold max-md:text-xl">
+      <div class="flex flex-col gap-2 items-start justify-start">
+        <div
+          class="font-inter whitespace-nowrap text-start text-2xl font-bold max-md:text-xl"
+        >
           {{ card.title }}
         </div>
         <div class="text-xs">{{ card.subtitle }}</div>

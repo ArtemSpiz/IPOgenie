@@ -1,33 +1,30 @@
 <template>
   <section
     ref="sectionRef"
-    class="max-w-[2000px] base-x-p mt-[112px] max-lg:mt-[80px] max-md:mt-10 mx-auto px-4 text-center min-h-[180vh]"
+    class="max-w-[2000px] base-x-p mt-[112px] max-lg:mt-[80px] mx-auto px-4 text-center max-md:mt-[60px] max-md:h-[380px]"
   >
-    <div ref="stickyContainer" class="sticky top-0 py-20">
-      <h2 class="title mb-6 mx-auto max-w-[680px] text-black">
-        How We Tokenize
-        <span class="sectitle">the World</span>
-      </h2>
-      <p class="description text-black mb-16 max-md:mb-10">{{ subtitle }}</p>
+    <h2 class="title mb-6 mx-auto max-w-[680px] text-black">
+      How We Tokenize
+      <span class="sectitle">the World</span>
+    </h2>
+    <p class="description text-black mb-16 max-md:mb-10">{{ subtitle }}</p>
 
+    <div
+      ref="cardsContainer"
+      class="relative flex flex-col items-center justify-center gap-5 max-md:gap-0"
+    >
       <div
-        ref="cardsContainer"
-        class="relative flex flex-col items-center justify-center h-[205px]"
+        v-for="(process, index) in processes"
+        :key="index"
+        class="process-card-sec w-full max-w-[600px] min-h-[190px]"
+        :style="{
+          zIndex: index + 1,
+        }"
       >
-        <div
-          v-for="(process, index) in processes"
-          :key="index"
-          :ref="(el) => (cardRefs[index] = el)"
-          class="process-card absolute w-full max-w-[600px]"
-          :style="{
-            zIndex: index + 1,
-          }"
-        >
-          <ProcessCard
-            :title="process.title"
-            :description="process.description"
-          />
-        </div>
+        <ProcessCard
+          :title="process.title"
+          :description="process.description"
+        />
       </div>
     </div>
   </section>
@@ -67,65 +64,62 @@ const processes = [
 ];
 
 const sectionRef = ref(null);
-const stickyContainer = ref(null);
 const cardsContainer = ref(null);
-const cardRefs = ref([]);
+let scrollTriggerInstance = null;
+const isMobile = window.innerWidth < 768;
 
 onMounted(() => {
-  const cards = cardRefs.value;
-  const isMobile = window.innerWidth < 768;
-  const offsetX = isMobile ? 0 : -40;
+  const cards = gsap.utils.toArray(".process-card-sec");
+  const offsetY = isMobile
+    ? cards[0].offsetHeight - 40
+    : cards[0].offsetHeight - 80;
+  const offsetX = isMobile ? -10 : -40; // горизонтальне зміщення
 
-  // Початкові позиції
-  gsap.set(cards[0], { y: 0, x: 0 }); // Перша картка по центру
-  gsap.set(cards[1], { y: 250, x: offsetX }); // Друга картка внизу
-  gsap.set(cards[2], { y: 490, x: offsetX * 2 }); // Третя картка внизу
+  // Встановлюємо правильний порядок накладання
+  gsap.set(cards, (card, i) => ({
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    zIndex: cards.length - i,
+  }));
 
-  // Створюємо ScrollTrigger для пінінгу секції
-  ScrollTrigger.create({
+  scrollTriggerInstance = ScrollTrigger.create({
     trigger: sectionRef.value,
     start: "top top",
-    end: "bottom bottom",
-    pin: stickyContainer.value,
-    pinSpacing: false,
-  });
+    end: "+=300%",
+    pin: true,
+    scrub: true,
+    onUpdate: (self) => {
+      const progress = self.progress; // 0 → 1
+      const totalCards = cards.length;
 
-  // Перша картка залишається на місці (без анімації)
+      cards.forEach((card, i) => {
+        if (i === 0) return; // перша нерухома
 
-  // Друга картка накриває першу, залишаючи 80px зверху
-  gsap.to(cards[1], {
-    y: 80,
-    x: offsetX,
-    ease: "none",
-    scrollTrigger: {
-      trigger: sectionRef.value,
-      start: "top top",
-      end: "top+=400 top",
-      scrub: 1,
-    },
-  });
+        // Ділимо прогрес на "сегменти" для кожної картки
+        const segmentStart = (i - 1) / (totalCards - 1);
+        const segmentEnd = i / (totalCards - 1);
 
-  // Третя картка накриває другу, залишаючи 80px від другої
-  gsap.to(cards[2], {
-    y: 160,
-    x: offsetX * 2,
-    ease: "none",
-    scrollTrigger: {
-      trigger: sectionRef.value,
-      start: "top+=400 top",
-      end: "top+=800 top",
-      scrub: 1,
+        let cardProgress =
+          (progress - segmentStart) / (segmentEnd - segmentStart);
+        cardProgress = Math.min(Math.max(cardProgress, 0), 1); // обмежуємо 0→1
+
+        const yOffset = -offsetY * i;
+        const xOffset = offsetX * i;
+
+        gsap.to(card, {
+          y: yOffset * cardProgress,
+          x: xOffset, // додаємо горизонтальне зміщення
+          ease: "none",
+          overwrite: "auto",
+        });
+      });
     },
   });
 });
 
 onUnmounted(() => {
-  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  if (scrollTriggerInstance) scrollTriggerInstance.kill();
 });
 </script>
-
-<style scoped>
-.process-card {
-  transition: all 0.3s ease;
-}
-</style>
