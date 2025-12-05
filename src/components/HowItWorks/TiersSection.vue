@@ -18,7 +18,7 @@
         v-for="(card, i) in TiersCards"
         :key="i"
         :class="[
-          'relative flex-1 bg-[#EFEFEF] process-card min-w-[320px]  px-[30px] h-full min-h-[490px] pb-10 rounded-[20px] pt-[70px] max-md:mt-[50px] border max-md:min-h-[450px]',
+          'relative flex-1 bg-[#EFEFEF] process-card min-w-[320px]  px-[30px] h-full min-h-[490px] pb-10 rounded-[20px] pt-[70px] max-md:mt-[50px] border max-md:min-h-[450px] max-md:w-full max-md:max-w-[400px] max-md:mx-auto',
           card.orange ? 'border-[#FF5B00]' : 'border-black',
         ]"
       >

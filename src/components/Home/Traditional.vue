@@ -131,7 +131,7 @@ const goToSlide = (index) => {
           </div>
 
           <!-- Slide 2: IPO Genie -->
-          <div class="w-full flex-shrink-0 px-4">
+          <div class="w-full flex-shrink-0 px-4 mt-12">
             <div
               class="flex w-full max-w-[476px] mx-auto relative flex-col px-10 pt-[72px] pb-8 rounded-[30px] bg-[linear-gradient(124deg,#FF5B00_16.64%,#DA132C_151.5%)] gap-10"
             >

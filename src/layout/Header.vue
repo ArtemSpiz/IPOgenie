@@ -72,7 +72,7 @@ watch(
   >
     <div
       :class="[
-        'flex justify-between will-change-transform items-center rounded-[30px] py-5 px-10 w-full max-w-7xl max-md:px-5 max-md:py-3',
+        'flex justify-between  items-center rounded-[30px] py-5 px-10 w-full max-w-7xl max-md:px-5 max-md:py-3',
         isOpen
           ? 'bg-transparent'
           : colorBg
