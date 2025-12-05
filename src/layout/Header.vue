@@ -191,20 +191,24 @@ watch(
             class="flex justify-between items-center text-lg font-medium cursor-pointer mb-2"
             @click="item.links ? toggleLinks(index) : (isOpen = false)"
           >
-            <router-link
-              :to="item.link"
-              :class="[
-                'transition-colors duration-300',
-                item.title === 'Airdrop'
-                  ? [
-                      'text-lg italic rounded-[10px] px-3 py-1',
-                      colorBg ? 'bg-black text-white' : 'bg-white text-black',
-                    ]
-                  : 'hover:text-[#FF5B00]',
-              ]"
-            >
-              {{ item.title }}
-            </router-link>
+            <template v-if="!item.links">
+              <router-link
+                :to="item.link"
+                class="transition-colors duration-300 hover:text-[#FF5B00]"
+                @click="isOpen = false"
+              >
+                {{ item.title }}
+              </router-link>
+            </template>
+
+            <template v-else>
+              <div
+                class="transition-colors duration-300 hover:text-[#FF5B00]"
+                @click="toggleLinks(index)"
+              >
+                {{ item.title }}
+              </div>
+            </template>
 
             <HeaderArrow
               v-if="item.links"
