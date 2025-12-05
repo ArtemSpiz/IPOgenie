@@ -48,7 +48,7 @@ const GenieCards = [
       class="px-5 max-w-[2000px] mx-auto rounded-[40px] overflow-hidden py-14 h-full min-h-[681px] flex flex-col justify-center items-center bg-no-repeat bg-center bg-[url('@/assets/img/Home/GenieBg.png')] max-lg:bg-cover max-lg:bg-top max-lg:bg-[url('@/assets/img/Home/GenieBgMob.png')]"
     >
       <div
-        class="flex flex-col items-start gap-[34px] max-2xl:items-center max-md:gap-[75px]"
+        class="flex base-x-p  flex-col items-start gap-[34px] max-2xl:items-center max-md:gap-[75px]"
       >
         <div
           class="flex px-2 flex-col items-start text-center gap-[22px] max-2xl:items-center max-2xl:text-center max-2xl:justify-center"
@@ -63,7 +63,7 @@ const GenieCards = [
         </div>
 
         <div
-          class="flex base-x-p items-center max-2xl:flex-wrap justify-center self-stretch gap-[30px]"
+          class="flex items-center max-2xl:flex-wrap justify-center self-stretch gap-[30px]"
         >
           <div
             v-for="(card, index) in GenieCards"

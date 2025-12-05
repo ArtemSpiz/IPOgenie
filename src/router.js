@@ -14,6 +14,7 @@ import Behavior from "./pages/Behavior.vue";
 import Marketplace from "./pages/Marketplace.vue";
 import Insurance from "./pages/Insurance.vue";
 import BuyNow from "./pages/BuyNow.vue";
+import Airdrop from "./pages/Airdrop.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
@@ -31,6 +32,7 @@ const routes = [
   { path: "/marketplace", name: "Marketplace", component: Marketplace },
   { path: "/insurance", name: "Insurance", component: Insurance },
   { path: "/buy-now", name: "BuyNow", component: BuyNow },
+  { path: "/airdrop", name: "Airdrop", component: Airdrop },
 ];
 
 const router = createRouter({

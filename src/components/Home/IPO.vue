@@ -144,7 +144,7 @@ const lastCards = computed(() => {
         </div>
 
         <div
-          class="border-[15px] min-w-[500px] items-center gap-8 justify-between px-[30px] py-10 bg-white flex flex-col rounded-[30px] shadow-[0_4px_20px_0_rgba(0,0,0,0.25)] border-[#EDEDED] w-full lg:flex-1 max-md:px-[14px] max-md:py-7 max-md:gap-5 max-md:border-[7px] max-md:rounded-[20px]"
+          class="border-[15px] min-w-[500px] max-md:min-w-0 items-center gap-8 justify-between px-[30px] py-10 bg-white flex flex-col rounded-[30px] shadow-[0_4px_20px_0_rgba(0,0,0,0.25)] border-[#EDEDED] w-full lg:flex-1 max-md:px-[14px] max-md:py-7 max-md:gap-5 max-md:border-[7px] max-md:rounded-[20px]"
         >
           <div
             class="text-[32px] text-center lg:text-left text-black font-inter font-extrabold leading-[85%] max-md:text-[22px]"
@@ -156,40 +156,40 @@ const lastCards = computed(() => {
             <div
               v-for="(link, index) in IPOlinesCenter"
               :key="index"
-              class="w-full flex bg-[#ECECEC] rounded-[20px] items-center justify-between p-5 flex-wrap gap-4 max-md:items-start max-md:gap-3 max-md:p-[9px] max-md:rounded-[8px]"
+              class="w-full flex bg-[#ECECEC] rounded-[20px] items-center justify-between p-5 gap-4  max-md:gap-3 max-md:p-[8px]  max-md:rounded-[8px]"
             >
-              <div class="flex gap-[11px] items-center flex-wrap max-md:gap-3">
+              <div class="flex gap-[11px] items-center max-md:gap-1">
                 <div
                   class="w-[30px] h-[30px] flex-shrink-0 max-md:w-4 max-md:h-4"
                 >
                   <img :src="link.icon" alt="company icon" />
                 </div>
 
-                <div class="flex gap-5 items-center flex-wrap max-md:gap-3">
+                <div class="flex gap-5 items-center max-md:gap-2">
                   <div
-                    class="text-xl font-inter text-black font-extrabold whitespace-nowrap max-md:text-xs"
+                    class="text-xl font-inter text-black font-extrabold whitespace-nowrap max-md:text-[10px]"
                   >
                     {{ link.name }}
                   </div>
 
                   <div
-                    class="text-xl flex items-center gap-[10px] font-inter text-black font-medium whitespace-nowrap max-md:text-xs"
+                    class="text-xl flex items-center gap-[10px] max-md:gap-1 font-inter text-black font-medium whitespace-nowrap max-md:text-xs"
                   >
                     Pre-IPO <Arrow fill-color="#000" /> IPO
                   </div>
                 </div>
               </div>
 
-              <div class="flex items-center gap-2 flex-wrap max-md:gap-[6px]">
+              <div class="flex items-center gap-2 max-md:gap-1">
                 <div
-                  class="text-xl flex items-center gap-[10px] font-inter text-[#00CA5B] font-medium whitespace-nowrap max-md:text-xs"
+                  class="text-xl flex items-center gap-[10px] max-md:gap-1 font-inter text-[#00CA5B] font-medium whitespace-nowrap max-md:text-xs"
                 >
                   {{ link.number1 }} <Arrow fill-color="#00CA5B" />
                   {{ link.number2 }}
                 </div>
 
                 <div
-                  class="text-base font-inter text-[#898989] font-medium whitespace-nowrap max-md:text-xs"
+                  class="text-base font-inter text-[#898989] font-medium whitespace-nowrap max-md:text-[8px]"
                 >
                   {{ link.x }}
                 </div>

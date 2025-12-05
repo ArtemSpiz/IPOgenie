@@ -35,12 +35,12 @@ import VideoBgHero from "@/assets/img/Home/VideoBgHero.mp4";
         class="flex flex-col z-20 items-center max-md:justify-center max-md:h-[calc(100%-150px)]"
       >
         <div
-          class="text-[150px] text-center font-bold tracking-[-6px] max-2xl:text-[120px] max-xl:text-[100px] max-lg:text-7xl max-lg:tracking-[-1.6px] max-md:text-[42px]"
+          class="text-[150px] text-center font-bold tracking-[-6px] max-2xl:text-[120px] max-xl:text-[100px] max-lg:text-7xl max-lg:tracking-[-1.2px] max-md:text-[42px]"
         >
           Web3 WallStreet
         </div>
         <div
-          class="description max-w-[800px] max-lg:max-w-[500px] text-center mt-5"
+          class="description max-w-[800px] max-lg:max-w-[500px] text-center mt-5 max-md:!leading-[160%] max-md:tracking-[-0.24px]"
         >
           IPO Genie gives you early-stage access to the private deals that shape
           global markets - previouslyreserved for institutions like Sequoia,
@@ -57,7 +57,9 @@ import VideoBgHero from "@/assets/img/Home/VideoBgHero.mp4";
         </div>
       </div>
 
-      <div class="flex gap-4 items-center max-md:flex-col max-md:gap-[10px]">
+      <div
+        class="flex z-20 gap-4 items-center max-md:flex-col max-md:gap-[10px]"
+      >
         <div class="text-sm max-md:text-xs">Audited by :</div>
         <div class="flex gap-4 items-center max-md:gap-5">
           <div class="w-[110px] h-7 max-md:w-[95px] max-md:h-auto">

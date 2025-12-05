@@ -60,8 +60,8 @@ const goToSlide = (index) => {
     </div>
 
     <!-- Desktop view -->
-    <div class="hidden lg:flex items-center relative gap-5 w-full">
-      <div class="w-[475px] flex-1 h-auto">
+    <div class="hidden lg:flex justify-center items-center relative gap-5 w-full">
+      <div class="w-[475px] max-w-[500px] flex-1 h-auto">
         <img :src="TraditionalLeftImg" />
       </div>
       <div
@@ -121,15 +121,6 @@ const goToSlide = (index) => {
           class="flex transition-transform duration-300 ease-in-out"
           :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
         >
-          <!-- Slide 1: Traditional VC -->
-          <div class="w-full flex-shrink-0 px-4">
-            <div class="w-full max-w-[476px] mx-auto">
-              <img
-                :src="isMobile ? TraditionalLeftImgMob : TraditionalLeftImg"
-              />
-            </div>
-          </div>
-
           <!-- Slide 2: IPO Genie -->
           <div class="w-full flex-shrink-0 px-4 mt-12">
             <div
@@ -184,6 +175,15 @@ const goToSlide = (index) => {
                 border-color="#fff"
                 class="!w-max gap-10"
                 bg-arrow="#FF5B00"
+              />
+            </div>
+          </div>
+
+          <!-- Slide 1: Traditional VC -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div class="w-full max-w-[476px] mx-auto">
+              <img
+                :src="isMobile ? TraditionalLeftImgMob : TraditionalLeftImg"
               />
             </div>
           </div>
