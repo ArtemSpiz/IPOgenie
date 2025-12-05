@@ -11,9 +11,16 @@ import VideoBgHero from "@/assets/img/Home/VideoBgHero.mp4";
       class="flex relative flex-col gap-10 items-center justify-end rounded-[60px] max-md:rounded-[30px] overflow-hidden w-full h-full pb-[200px] max-2xl:pb-[100px] max-xl:pb-[80px] max-lg:pb-[60px] max-md:pb-[40px] max-md:gap-0 max-md:px-12 max-xl::rounded-[30px]"
     >
       <img
+        loading="eager"
         :src="HeroBg"
         class="absolute inset-0 w-full h-full object-cover max-md:hidden"
         alt="Background fallback"
+      />
+      <img
+        loading="eager"
+        :src="HeroBgMob"
+        class="absolute inset-0 w-full h-full object-cover hidden max-md:block"
+        alt="Background fallback mobile"
       />
       <video
         class="absolute inset-0 w-full h-full object-cover"
