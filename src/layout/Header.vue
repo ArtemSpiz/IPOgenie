@@ -72,7 +72,7 @@ watch(
   >
     <div
       :class="[
-        'flex justify-between items-center rounded-[30px] py-5 px-10 w-full max-w-7xl max-md:px-5 max-md:py-3',
+        'flex justify-between will-change-transform items-center rounded-[30px] py-5 px-10 w-full max-w-7xl max-md:px-5 max-md:py-3',
         isOpen
           ? 'bg-transparent'
           : colorBg
@@ -183,7 +183,7 @@ watch(
     <transition name="fade">
       <div
         v-if="isOpen"
-        :class="colorBg ? 'text-black' : 'text-white'"
+        :class="colorBg ? 'text-black bg-white' : 'text-white'"
         class="absolute h-screen pt-[100px] top-[0px] backdrop-blur-md left-0 right-0 shadow-lg rounded-b-2xl py-5 flex flex-col items-start px-10 gap-4 z-40"
       >
         <div v-for="(item, index) in HeaderLinks" :key="index" class="w-full">
