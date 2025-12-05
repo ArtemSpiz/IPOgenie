@@ -84,7 +84,7 @@ const lastCards = computed(() => {
 
 <template>
   <div
-    class="mt-[94px] flex flex-col gap-11 items-center justify-center max-w-[2000px] base-x-p mx-auto"
+    class="mt-[94px] flex flex-col gap-11 items-center justify-center 2xl:px-[100px] max-w-[2000px] base-x-p mx-auto"
   >
     <div class="flex flex-col gap-10 w-full max-md:gap-4">
       <div class="flex flex-col gap-7 items-center">
@@ -114,8 +114,10 @@ const lastCards = computed(() => {
         </div>
       </div>
 
-      <div class="flex gap-[7px] flex-col 2xl:flex-col w-full">
-        <div class="flex gap-[7px] w-full 2xl:w-auto max-md:flex-col">
+      <div class="flex gap-[7px] max-2xl:flex-col w-full">
+        <div
+          class="flex flex-col max-2xl:flex-row gap-[7px] w-full 2xl:w-auto max-md:flex-col"
+        >
           <div
             v-for="(card, index) in firstCards"
             :key="index"
@@ -142,7 +144,7 @@ const lastCards = computed(() => {
         </div>
 
         <div
-          class="border-[15px] items-center gap-8 justify-between px-[30px] py-10 bg-white flex flex-col rounded-[30px] shadow-[0_4px_20px_0_rgba(0,0,0,0.25)] border-[#EDEDED] w-full lg:flex-1 max-md:px-[14px] max-md:py-7 max-md:gap-5 max-md:border-[7px] max-md:rounded-[20px]"
+          class="border-[15px] min-w-[500px] items-center gap-8 justify-between px-[30px] py-10 bg-white flex flex-col rounded-[30px] shadow-[0_4px_20px_0_rgba(0,0,0,0.25)] border-[#EDEDED] w-full lg:flex-1 max-md:px-[14px] max-md:py-7 max-md:gap-5 max-md:border-[7px] max-md:rounded-[20px]"
         >
           <div
             class="text-[32px] text-center lg:text-left text-black font-inter font-extrabold leading-[85%] max-md:text-[22px]"
@@ -207,7 +209,9 @@ const lastCards = computed(() => {
           </div>
         </div>
 
-        <div class="flex gap-[7px] w-full 2xl:w-auto max-md:flex-col">
+        <div
+          class="flex flex-col max-2xl:flex-row gap-[7px] w-full 2xl:w-auto max-md:flex-col"
+        >
           <div
             v-for="(card, index) in lastCards"
             :key="index + 2"

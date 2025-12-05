@@ -13,6 +13,7 @@ import IndexFunds from "./pages/IndexFunds.vue";
 import Behavior from "./pages/Behavior.vue";
 import Marketplace from "./pages/Marketplace.vue";
 import Insurance from "./pages/Insurance.vue";
+import BuyNow from "./pages/BuyNow.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
@@ -29,6 +30,7 @@ const routes = [
   { path: "/behavior", name: "Behavior", component: Behavior },
   { path: "/marketplace", name: "Marketplace", component: Marketplace },
   { path: "/insurance", name: "Insurance", component: Insurance },
+  { path: "/buy-now", name: "BuyNow", component: BuyNow },
 ];
 
 const router = createRouter({

@@ -22,7 +22,7 @@ body {
 .title {
   @apply font-inter
          text-[80px] font-extrabold leading-[100%]
-         tracking-[var(--h1-letterspacing,-3.2px)] max-lg:text-6xl max-md:text-[32px] max-md:tracking-[var(--h1-letterspacing,-1.2px)];
+         tracking-[var(--h1-letterspacing,-3.2px)] max-lg:text-[60px]  max-md:text-[32px] max-md:tracking-[var(--h1-letterspacing,-1.2px)];
 }
 
 .sectitle {

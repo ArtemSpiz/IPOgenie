@@ -185,13 +185,13 @@ const segments = (() => {
         </div>
 
         <div
-          class="flex relative justify-center items-center max-2xl:absolute max-2xl:right-[-50px] max-2xl:top-1/2 max-2xl:-translate-y-1/2 max-lg:static max-lg:w-max max-lg:mx-auto max-lg:translate-y-0 max-lg:mt-8"
+          class="2xl:h-[350px] 2xl:my-auto 2xl:min-w-[490px] flex relative justify-center items-center max-2xl:absolute max-2xl:right-[-50px] max-2xl:top-1/2 max-2xl:-translate-y-1/2 max-lg:static max-lg:w-max max-lg:mx-auto max-lg:translate-y-0 max-lg:mt-8"
         >
           <svg
             width="500"
             height="500"
             viewBox="0 0 500 500"
-            class="max-w-full h-auto max-2xl:w-[530px] max-2xl:h-[350px] max-lg:w-[400px] max-md:h-[280px] max-md:w-[280px]"
+            class="max-w-full w-[530px] h-[350px] max-lg:w-[400px] max-md:h-[280px] max-md:w-[280px]"
           >
             <defs>
               <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
@@ -251,7 +251,7 @@ const segments = (() => {
             :class="[
               'absolute ',
               {
-                'right-[70px] top-1/2 -translate-y-1/2  max-lg:right-[0px] max-lg:top-[65%] max-md:right-[-20px]':
+                '2xl:right-[40px] right-[70px] top-1/2 -translate-y-1/2  max-lg:right-[0px] max-lg:top-[65%] max-md:right-[-20px]':
                   i === 0,
               },
               {

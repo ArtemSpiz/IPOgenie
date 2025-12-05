@@ -33,13 +33,20 @@ const handleClick = (event) => {
     emit("click", event);
   }
 };
+
+const computedTo = computed(() => {
+  if (["Buy Now", "Buy $IPO Now"].includes(props.text)) {
+    return "/buy-now";
+  }
+  return props.to;
+});
 </script>
 
 <template>
   <!-- If router link -->
   <router-link
     v-if="to"
-    :to="to"
+    :to="computedTo"
     class="flex items-center z-10 w-[210px] border rounded-2xl text-base justify-between pl-[18px] pr-[11px] py-[10px] font-medium max-md:py-[5px] max-md:rounded-lg max-md:pl-3 max-md:text-[10px] max-md:pr-1 max-md:w-[125px] transition-all duration-200 group hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0"
     :style="styleObject"
   >
