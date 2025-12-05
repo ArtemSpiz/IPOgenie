@@ -26,7 +26,7 @@ import CustomButton from "@/ui/CustomButton.vue";
           </div>
         </div>
       </div>
-      <CustomButton text="Copy Link" :icon="Copy" />
+      <CustomButton text="Copy Link" class="!w-max gap-1 whitespace-nowrap" :icon="Copy" />
     </div>
   </div>
 </template>

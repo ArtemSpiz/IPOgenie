@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div class="flex items-center justify-center gap-2 mt-3">
+    <div class="flex items-center justify-center gap-2 mt-3 max-md:mt-0">
       <div class="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
       <p class="text-sm font-semibold text-white font-inter">
         Live Status: Open

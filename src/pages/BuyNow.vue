@@ -6,11 +6,13 @@
         <!-- Left Column -->
         <div class="space-y-6">
           <HeroCard />
-          <StatsRow />
+          <StatsRow class="max-lg:hidden" />
         </div>
 
         <!-- Right Column - Buy Widget -->
         <BuyWidget />
+
+        <StatsRow class="hidden max-lg:flex" />
       </div>
 
       <!-- My Investment Section -->

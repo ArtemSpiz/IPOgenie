@@ -39,7 +39,7 @@ const LiveCards = [
       <div
         v-for="(card, index) in LiveCards"
         :key="index"
-        class="px-7 min-w-[245px] shadow-[0_4px_10px_2px_rgba(0,0,0,0.10)] h-[240px] justify-between flex items-start flex-col gap-8 bg-white rounded-[30px] py-5 max-md:rounded-[20px] max-md:py-4 max-md:px-3 max-md:h-full max-md:aspect-square max-md:min-w-[unset] max-md:w-full"
+        class="px-7  shadow-[0_4px_10px_2px_rgba(0,0,0,0.10)] h-[240px] justify-between flex items-start flex-col gap-8 bg-white rounded-[30px] py-5 max-md:rounded-[20px] max-md:py-4 max-md:px-3 max-md:h-full max-md:aspect-square max-md:min-w-[unset] max-md:w-full"
       >
         <div
           class="text-[#000] font-semibold text-lg leading-[100%] whitespace-nowrap max-lg:text-base max-md:text-xs"
@@ -52,7 +52,7 @@ const LiveCards = [
             class="flex flex-col gap-[5px] items-start justify-start max-md:gap-0"
           >
             <div
-              class="text-black font-semibold text-[38px] leading-[100%] whitespace-nowrap max-md:text-2xl"
+              class="text-black font-semibold text-[38px] leading-[100%] whitespace-nowrap max-xl:text-3xl max-lg:text-2xl"
             >
               {{ card.number }}
             </div>

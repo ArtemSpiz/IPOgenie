@@ -3,19 +3,21 @@
     <!-- Countdown Header -->
     <CountdownTimer />
 
-    <div class="p-6">
+    <div class="p-6 max-md:px-8 max-md:py-5">
       <!-- USD Raised -->
       <div class="flex items-center justify-between gap-2 mb-2">
         <div class="flex items-center gap-1">
           <span class="text-sm text-black/50 font-medium font-inter">
             USD Raised
           </span>
-          <span class="text-lg text-black font-semibold font-inter">
+          <span
+            class="text-lg text-black max-md:text-sm font-semibold font-inter"
+          >
             {{ formatCurrency(usdRaised) }}
           </span>
         </div>
 
-        <span class="text-lg text-black font-inter"
+        <span class="text-lg text-black max-md:text-sm font-inter"
           >{{ progressPercentage }}%</span
         >
       </div>
@@ -30,10 +32,14 @@
       />
 
       <!-- Buy Options -->
-      <p class="text-lg text-black font-bold font-inter mt-5 mb-3">
+      <p
+        class="text-lg max-md:text-sm text-black font-bold font-inter mt-5 mb-3 max-sm:mb-2"
+      >
         You Buy With
       </p>
-      <div class="grid text-black grid-cols-2 gap-3 mb-4">
+      <div
+        class="grid text-black grid-cols-2 gap-3 max-md:gap-2 max-md:mb-2 mb-4 max-md:grid-cols-1"
+      >
         <button
           v-for="method in paymentMethods"
           :key="method.id"
@@ -69,7 +75,9 @@
         <!-- First Row -->
         <div class="flex gap-2 text-black relative">
           <div
-            v-for="(crypto, index) in cryptoList.slice(0, 3)"
+            v-for="(crypto, index) in isMobile
+              ? cryptoList.slice(0, 1)
+              : cryptoList.slice(0, 3)"
             :key="crypto.id"
             class="flex-1 relative"
           >
@@ -134,7 +142,7 @@
         </div>
 
         <!-- Second Row -->
-        <div class="flex gap-2 text-black">
+        <div class="flex max-md:hidden gap-2 text-black">
           <div
             v-for="(crypto, index) in cryptoList.slice(3, 5)"
             :key="crypto.id"
@@ -200,7 +208,7 @@
           </div>
 
           <!-- More Button -->
-          <div class="flex-1 relative">
+          <div class="flex-1 relative max-md:hidden">
             <button
               class="border border-black/50 w-full rounded-xl py-2.5 px-3 flex items-center justify-between gap-2 transition-colors hover:border-black/70"
               @click="toggleCryptoDropdown"
@@ -245,7 +253,9 @@
         </div>
 
         <!-- Crypto Icons Display -->
-        <div class="flex items-center text-black justify-center gap-0 py-2">
+        <div
+          class="flex items-center text-black justify-center max-md:pt-4 gap-0"
+        >
           <div class="h-7 w-auto">
             <img :src="OtherCryptos" class="object-contain" />
           </div>
@@ -257,34 +267,44 @@
 
       <!-- Price Info -->
       <div
-        class="border text-black border-black/50 rounded-xl py-2 sm:py-3 px-3 sm:px-5 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0 mb-4"
+        class="border text-black border-black/50 rounded-xl py-2 sm:py-3 px-3 sm:px-5 flex flex-row items-center justify-between gap-2 sm:gap-0 mb-4"
       >
         <div class="flex items-center gap-2">
-          <span class="text-sm sm:text-base font-medium">
+          <span class="max-md:text-[10px] text-base font-medium">
             Presale Price =
           </span>
-          <span class="text-sm sm:text-base font-medium text-orange-500">
+          <span
+            class="max-md:text-[10px] text-base font-medium text-orange-500"
+          >
             {{ formatPrice(presalePrice) }}
           </span>
         </div>
-        <div class="hidden sm:block w-px h-8 bg-black"></div>
+        <div class="block w-px h-8 bg-black"></div>
         <div class="flex items-center gap-2">
-          <span class="text-sm sm:text-base font-medium"> Launch Price = </span>
-          <span class="text-sm sm:text-base font-medium text-orange-500">
+          <span class="text-[10px] sm:text-base font-medium">
+            Launch Price =
+          </span>
+          <span class="text-[10px] sm:text-base font-medium text-orange-500">
             {{ formatPrice(launchPrice) }}
           </span>
         </div>
       </div>
 
       <!-- Pay/Receive Section -->
-      <div class="grid relative grid-cols-2 text-black gap-4 mb-4">
+      <div
+        class="grid relative grid-cols-2 text-black gap-4 mb-4 max-md:gap-2 max-md:grid-cols-1"
+      >
         <div>
-          <p class="text-base font-semibold font-inter mb-2">You Pay</p>
+          <p
+            class="text-base max-md:text-sm font-semibold font-inter mb-2 max-md:mb-0"
+          >
+            You Pay
+          </p>
           <div
             class="border relative border-black/50 rounded-xl py-3 px-4 flex items-center justify-between"
           >
             <div
-              class="absolute top-1/2 right-0 translate-x-[85%] -translate-y-1/2 text-white w-6 aspect-square bg-orange-500 rounded-full flex justify-center items-center font-bold"
+              class="absolute top-1/2 right-0 translate-x-[85%] -translate-y-1/2 text-white w-6 aspect-square max-md:h-10 max-md:w-10  bg-orange-500 rounded-full flex justify-center items-center font-bold max-md:right-1/2 max-md:translate-x-1/2 max-md:translate-y-[40%] max-md:bottom-0"
             >
               =
             </div>
@@ -310,7 +330,11 @@
           </div>
         </div>
         <div>
-          <p class="text-base font-semibold font-inter mb-2">You Receive</p>
+          <p
+            class="text-base max-md:text-sm font-semibold font-inter mb-2 max-md:mb-0"
+          >
+            You Receive
+          </p>
           <div
             class="border border-black/50 rounded-xl py-3 px-4 flex items-center justify-between"
           >
@@ -395,6 +419,8 @@ const openDropdownIndex = ref(null);
 const usdRaised = ref(18_434_064);
 const payAmount = ref(1);
 const receiveAmount = ref(0);
+
+const isMobile = window.innerWidth < 768;
 
 // ============= CRYPTO DATA =============
 const cryptoList = ref([
@@ -601,6 +627,6 @@ input[type="range"]::-moz-range-track {
 
 /* Custom property for gradient */
 .range-orange {
-  --percent: 0%;
+  --percent: 53%;
 }
 </style>
