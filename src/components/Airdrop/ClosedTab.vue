@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col gap-3">
     <EventCard
       v-for="event in events"
       :key="event.title"

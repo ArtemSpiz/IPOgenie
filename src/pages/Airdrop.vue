@@ -15,6 +15,8 @@
         <AirdropTab v-if="activeTab === 'airdrop'" />
         <UpcomingTab v-if="activeTab === 'upcoming'" />
         <ClosedTab v-if="activeTab === 'closed'" />
+
+        <SocAirdrop v-if="activeTab === 'closed' || activeTab === 'upcoming'" />
       </div>
     </div>
 
@@ -33,6 +35,7 @@ import AirdropTab from "@/components/Airdrop/AirdropTab.vue";
 import UpcomingTab from "@/components/Airdrop/UpcomingTab.vue";
 import ClosedTab from "@/components/Airdrop/ClosedTab.vue";
 import FAQ from "@/components/Home/FAQ.vue";
+import SocAirdrop from "@/components/Airdrop/SocAirdrop.vue";
 
 const activeTab = ref("airdrop");
 
